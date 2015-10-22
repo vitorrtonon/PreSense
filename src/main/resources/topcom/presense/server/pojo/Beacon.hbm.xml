@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="topcom.presense.server.pojo">
+
+    <class name="Beacon" table="Beacon">
+
+		<id name="id" column="beacon_id" type="long" />
+
+		<many-to-one name="person" column="person" class="Person" not-null="true"/>
+    </class>
+
+</hibernate-mapping>

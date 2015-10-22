@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="topcom.presense.server.pojo">
+
+    <class name="Event" table="Event">
+
+		<id name="id" column="event_id" type="long" />
+
+		<property name="name" column="name" type="string" />
+
+		<property name="startDate" column="startdate" type="timestamp" />
+
+		<property name="endDate" column="endDate" type="timestamp" />
+
+		<bag name="participants" table="PersonEvent">
+			<key column="event_id" not-null="true" />
+			<many-to-many column="person_id" class="Person" />
+		</bag>
+
+		<bag name="managers" table="EventManager">
+			<key column="event_id" not-null="true" />
+			<many-to-many column="manager_id" class="Manager" />
+		</bag>
+
+		<bag name="sensors" inverse="true" table="Sensor">
+			<key column="event" not-null="true"/>
+			<one-to-many class="Sensor" />
+		</bag>
+    </class>
+
+</hibernate-mapping>

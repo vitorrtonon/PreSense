@@ -1,6 +1,0 @@
-[submodule "Web"]
-	path = Web
-	url = https://github.com/vitorrtonon/PreSenseWeb.git
-[submodule "Server"]
-	path = Server
-	url = https://github.com/vitorrtonon/PreSenseServer.git

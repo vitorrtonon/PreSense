@@ -8,6 +8,13 @@ public class Sensor {
 
 	public Sensor() {}
 
+	public Sensor(long id, String name) {
+
+		this.setId(id);
+		this.setName(name);
+		this.setEvent(null);
+	}
+
 	public Sensor(long id, String name, Event event) {
 
 		this.setId(id);
@@ -32,6 +39,9 @@ public class Sensor {
 	}
 
 	public void setEvent(Event event) {
+
+		if(event == null) event = new Event();
+
 		this.event = event;
 	}
 

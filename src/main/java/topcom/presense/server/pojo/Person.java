@@ -6,14 +6,23 @@ public class Person {
 
 	private long id;
 	private String name;
-	private ArrayList<Event> events;
-	private ArrayList<Beacon> beacons;
-	private ArrayList<Attendance> attendances;
+	private List<Event> events;
+	private List<Beacon> beacons;
+	private List<Attendance> attendances;
 
 	public Person() {}
 
-	public Person(long id, String name, ArrayList<Event> events, 
-			ArrayList<Beacon> beacons, ArrayList<Attendance> attendances) {
+	public Person(long id, String name) {
+
+		this.setId(id);
+		this.setName(name);
+		this.setEvents(null);
+		this.setBeacons(null);
+		this.setAttendances(null);
+	}
+
+	public Person(long id, String name, List<Event> events, 
+			List<Beacon> beacons, List<Attendance> attendances) {
 
 		this.setId(id);
 		this.setName(name);
@@ -38,27 +47,36 @@ public class Person {
 		return this.name;
 	}
 
-	public void setEvents(ArrayList<Event> events) {
+	public void setEvents(List<Event> events) {
+
+		if(events == null) events = new ArrayList<Event>();
+
 		this.events = events;
 	}
 
-	public ArrayList<Event> getEvents() {
+	public List<Event> getEvents() {
 		return this.events;
 	}
 
-	public void setBeacons(ArrayList<Beacon> beacons) {
+	public void setBeacons(List<Beacon> beacons) {
+
+		if(beacons == null) beacons = new ArrayList<Beacon>();
+
 		this.beacons = beacons;
 	}
 
-	public ArrayList<Beacon> getBeacons() {
+	public List<Beacon> getBeacons() {
 		return this.beacons;
 	}
 
-	public void setAttendances(ArrayList<Attendance> attendances) {
+	public void setAttendances(List<Attendance> attendances) {
+
+		if(attendances == null) attendances = new ArrayList<Attendance>();
+
 		this.attendances = attendances;
 	}
 
-	public ArrayList<Attendance> getAttendances() {
+	public List<Attendance> getAttendances() {
 		return this.attendances;
 	}
 }

@@ -9,7 +9,7 @@
 
 		<id name="id" column="beacon_id" type="long" />
 
-		<many-to-one name="person" column="person" class="Person" not-null="true"/>
+		<many-to-one name="person" column="person" class="Person" not-null="true" lazy="false"/>
     </class>
 
 </hibernate-mapping>

@@ -18,13 +18,4 @@ public class PreSenseWS {
 	*/
 
 	}
-
-	public void consultDatabase() {
-
-	/* 
-			Aqui vou fazer as operacoes necessarias relacionadas a manipulacao de dados
-		da interface Web.
-	*/
-
-	}
 }

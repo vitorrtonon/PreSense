@@ -13,7 +13,7 @@
 
 		<property name="password" column="password" type="string" />
 
-		<bag name="events" table="EventManager">
+		<bag name="events" table="EventManager" inverse="true" lazy="false">
 			<key column="manager_id" not-null="true"/>
 			<many-to-many column="event_id" class="Event"/>
 		</bag>

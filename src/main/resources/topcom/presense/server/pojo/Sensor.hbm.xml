@@ -11,7 +11,7 @@
 
 		<property name="name" column="name" type="string" />
 
-		<many-to-one name="event" column="event" class="Event" not-null="true" />
+		<many-to-one name="event" column="event" class="Event" lazy="false"/>
 
     </class>
 

@@ -7,12 +7,21 @@ public class Manager {
 	private String name;
 	private String username;
 	private String password;
-	private ArrayList<Event> events;
+	private List<Event> events;
 
 	public Manager() {}
 
 	public Manager(String name, String username, 
-				String password, ArrayList<Event> events) {
+				String password) {
+
+		this.setName(name);
+		this.setUsername(username);
+		this.setPassword(password);
+		this.setEvents(null);
+	}
+
+	public Manager(String name, String username, 
+				String password, List<Event> events) {
 
 		this.setName(name);
 		this.setUsername(username);
@@ -44,11 +53,14 @@ public class Manager {
 		return this.password;
 	}
 
-	public void setEvents(ArrayList<Event> events) {
+	public void setEvents(List<Event> events) {
+		
+		if(events == null) events = new ArrayList<Event>();
+
 		this.events = events;
 	}
 
-	public ArrayList<Event> getEvents() {
+	public List<Event> getEvents() {
 		return this.events;
 	}
 }

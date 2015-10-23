@@ -15,17 +15,17 @@
 
 		<property name="endDate" column="endDate" type="timestamp" />
 
-		<bag name="participants" table="PersonEvent">
+		<bag name="participants" table="PersonEvent" lazy="false">
 			<key column="event_id" not-null="true" />
 			<many-to-many column="person_id" class="Person" />
 		</bag>
 
-		<bag name="managers" table="EventManager">
+		<bag name="managers" table="EventManager" lazy="false">
 			<key column="event_id" not-null="true" />
 			<many-to-many column="manager_id" class="Manager" />
 		</bag>
 
-		<bag name="sensors" inverse="true" table="Sensor">
+		<bag name="sensors" table="Sensor" inverse="true" lazy="false">
 			<key column="event" not-null="true"/>
 			<one-to-many class="Sensor" />
 		</bag>

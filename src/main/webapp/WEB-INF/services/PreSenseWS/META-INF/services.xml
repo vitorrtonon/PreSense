@@ -8,9 +8,5 @@
 		<operation name="receiveInfoFromSensor">      
 			<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
 		</operation>
-
-		<operation name="consultDatabase">      
-			<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
-		</operation>
 	</service>
 </serviceGroup>

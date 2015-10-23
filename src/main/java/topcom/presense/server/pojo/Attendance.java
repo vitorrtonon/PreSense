@@ -12,7 +12,7 @@ public class Attendance {
 
 	public Attendance() {}
 
-	public Attendance(int id, Event event, Person person, 
+	public Attendance(Event event, Person person, 
 				Timestamp entranceTime, Timestamp departureTime) {
 
 		this.setId(id);

@@ -9,15 +9,27 @@ public class Event {
 	private String name;
 	private Timestamp startDate;
 	private Timestamp endDate;
-	private ArrayList<Person> participants;
-	private ArrayList<Manager> managers;
-	private ArrayList<Sensor> sensors;
+	private List<Person> participants;
+	private List<Manager> managers;
+	private List<Sensor> sensors;
 
 	public Event() {}
 
 	public Event(long id, String name, Timestamp startDate, 
-				Timestamp endDate, ArrayList<Person> participants, 
-				ArrayList<Manager> managers, ArrayList<Sensor> sensors) {
+				Timestamp endDate) {
+
+		this.setId(id);
+		this.setName(name);
+		this.setStartDate(startDate);
+		this.setEndDate(endDate);
+		this.setParticipants(null);
+		this.setManagers(null);
+		this.setSensors(null);
+	}
+
+	public Event(long id, String name, Timestamp startDate, 
+				Timestamp endDate, List<Person> participants, 
+				List<Manager> managers, List<Sensor> sensors) {
 
 		this.setId(id);
 		this.setName(name);
@@ -60,27 +72,36 @@ public class Event {
 		return this.endDate;
 	}
 
-	public void setParticipants(ArrayList<Person> participants) {
+	public void setParticipants(List<Person> participants) {
+	
+		if(participants == null) participants = new ArrayList<Person>();
+
 		this.participants = participants;
 	}
 
-	public ArrayList<Person> getParticipants() {
+	public List<Person> getParticipants() {
 		return this.participants;
 	}
 
-	public void setManagers(ArrayList<Manager> managers) {
+	public void setManagers(List<Manager> managers) {
+	
+		if(managers == null) managers = new ArrayList<Manager>();
+
 		this.managers = managers;
 	}
 
-	public ArrayList<Manager> getManagers() {
+	public List<Manager> getManagers() {
 		return this.managers;
 	}
 
-	public void setSensors(ArrayList<Sensor> sensors) {
+	public void setSensors(List<Sensor> sensors) {
+	
+		if(sensors == null) sensors = new ArrayList<Sensor>();
+
 		this.sensors = sensors;
 	}
 
-	public ArrayList<Sensor> getSensors() {
+	public List<Sensor> getSensors() {
 		return this.sensors;
 	}
 }

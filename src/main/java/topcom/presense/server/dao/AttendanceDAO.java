@@ -1,6 +1,10 @@
 package topcom.presense.server.dao;
 
+import java.util.*; 
+import org.hibernate.*;
+
 import topcom.presense.server.pojo.*;
+import topcom.presense.server.util.*;
 
 public class AttendanceDAO extends HibernateDAO {
 

@@ -13,66 +13,63 @@ public class PreSenseWS {
 	// apenas algo a ser computado após o encerramento do evento, não neste código.
 	// Questão: Distância é necessária?
 	// 
-	// Necessário ainda: resolver questão do ID do beacon
-	// TO-DO: verificar a busca por pessoa associada ao beacon (acima necessário)
-	// Necessário ainda: identificação do evento associado a comunicação
-	// TO-DO: lidar com campo evento nos campos comentados (acima necessário) 
+	// TO-DO: <?> buscar Attendance ativo (recebendo evento e pessoa, buscando
+	// por um onde encerramento é NULL)
+	// TO-DO: usar lib json para leitura da entrada
+	// TO-DO: lidar com a autentificação (pra extrair evento)
+	// >> Ultimos dois envolvem alteração dos valores de campos utilizados
+	// nas buscas e instanciações
+	//
+	// Questão: Resource é a mensagem HTTP integra?
 	public void receiveInfoFromSensor(byte[] resource) {
 
-		// Transforma cadeia de bytes em string (<correto?>)
+		// Trocar para uma leitura JSON?
 		String[] res = (new String(byte)).split("[,] | [\n] | [ : ] | [\"]");
 		int l = res.length;  
-		if (l != 10 || l != 12) { // If a sensor message
+		if (l != 10 || l != 12) { // If a sensor message 
 			System.err.println("Invalid stream received");
 			return;
 		}
-
 		if (l == 12) // If update or in (ps: Out has 10 tokens)
 			double dist = Double.parseDouble(res[1]); 
-		String[] time = res[l-3].split("[-] | [T] | [:] | [Z]"); 
-		Timestamp new Timestamp(time[0], time[1], time[2], time[3], time[4], time[5], 0);	
-		Person pers;
+		String[] t = res[l-3].split("[-] | [T] | [:] | [Z]"); 
+
+		// Convert time to Timestamp 
+		Calendar cal = Calendar.getInstance(); 
+		cal.set(Integer.parseInt(t[0]), Integer.parseInt(t[1]),Integer.parseInt(t[2]),
+				Integer.parseInt(t[3]), Integer.parseInt(t[4]), Integer.parseInt(t[5]));
+		Timestamp t = new Timestamp(cal.getTimeInMillis());	
 		
-		/* // Search for the beacon's owner
-		if ((pers = ?searchPerson(res[l-7] + res[l-5] + res[l-1])) == null)
-		System.err.println("Unregistered beacon");
-		*/
+		// Retrieve event using sensor's search
+		Event ev = EventDAO.findEventById(SensorDao.findSensorById(1).getEvent());
+		if (ev == null) {
+			System.err.println("Unregistered event")
+			return;
+		}
 		
+		// Retrieve person using beacon's search
+		Person p = BeaconDAO.findBeaconById(res[l-7] + res[l-5] + res[l-1]).getPerson();
+		if (p == null) {
+			System.err.println("Unregistered person")
+			return;
+		}
+				
 		// Process rightful sensor-event type 
-		if (res[l-9].equals("in")) sensorIn(dist, tStamp, pers);
-		else if (res[l-9].equals("update")) sensorUpdate(dist, tStamp, pers);
-		else if (res[l-9].equals("out")) sensorOut(tStamp, pers);
-		else System.err.println("Invalid stream received");
+		if (res[l-9].equals("in")) { // Register new attendence for 'p' in 'event'
+			AttendanceDao.insert(new Attendance(ev, p, t, null));
+		} else if (res[l-9].equals("out")) {
+			// Search for active attendence entry for 'p' in 'event,
+			if ((presence = /*<TO-DO>?*/AttendanceDAO.findAttendance(event, p, null)) != null)
+				presence.setDepartureTime(new Timestamp(System.currentTimeMillis()));
+			else // Else, some kind of error?
+				System.err.println("Presence not found. Unknown error."); 
+		} else if (res[l-9].equals("update")) {
+			// Search for active attendence for 'p' in 'event', if nothing is found, 
+			// start a new attendance (probably communication loss during 'in' message)
+			if ((presence = /*<TO-DO>?*/AttendanceDAO.findAttendance(event, p, null)) == null)
+				AttendanceDao.insert(new Attendance(ev, p, t, null));
+		} else System.err.println("Invalid stream received");
 		
-	}
-
-	private void sensorIn(Timestamp t, Person p) {	
-		/* 
-		// Register new attendence for 'p' in 'event'
-		?Attendance presence = new Attendance(?getEvent(), person, t, null);
-		*/
-	}
-
-	private void sensorOut(Timestamp t, Person p) {
-		/* 
-		// Search for active attendence entry for 'p' in 'event,
-		// then set a end to it 
-		if ((presence = ?searchAttendance(event, p, "Departure == null")) != null)
-			presence.setDepartureTime(new Timestamp());
-		else // Else, some kind of error?
-			System.err.println("Presence not found. Unknown error."); 
-		*/
-	}
-
-	private void sensorUpdate(Timestamp t, Person p) {
-		/*
-		// Search for active attendence for 'p' in 'event'
-		// if nothing is found, start a new attendance
-		// (probably communication loss for 'in' message)
-		if (?searchAttendance(event, p, "Departure == null") == null)
-			sensorIn(d, t, p);
-		*/
-
 	}
 
 }

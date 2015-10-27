@@ -2,22 +2,22 @@ package topcom.presense.server.pojo;
 
 public class Beacon {
 
-	private long id;
+	private String id;
 	private Person person;
 
 	public Beacon() {}
 
-	public Beacon(long id, Person person) {
+	public Beacon(String id, Person person) {
 
 		this.setId(id);
 		this.setPerson(person);
 	}
 
-	public void setId(long id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 
-	public long getId() {
+	public String getId() {
 		return this.id;
 	}
 

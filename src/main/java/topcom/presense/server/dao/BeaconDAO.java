@@ -24,7 +24,7 @@ public class BeaconDAO extends HibernateDAO {
 		return(super.delete(obj));
 	}
 
-	public Beacon findBeaconById(long id) {
+	public Beacon findBeaconById(String id) {
 
 		Session session = null;
 		Transaction transaction = null;
@@ -37,7 +37,7 @@ public class BeaconDAO extends HibernateDAO {
 			transaction = session.beginTransaction();
 
 			Query query = session.createQuery(SELECT_BEACON_BY_ID);
-			query.setLong("id", id);
+			query.setString("id", id);
 
 			beacon = (Beacon) query.uniqueResult();
 

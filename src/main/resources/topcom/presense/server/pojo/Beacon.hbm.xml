@@ -7,7 +7,7 @@
 
     <class name="Beacon" table="Beacon">
 
-		<id name="id" column="beacon_id" type="long" />
+		<id name="id" column="beacon_id" type="string" />
 
 		<many-to-one name="person" column="person" class="Person" not-null="true" lazy="false"/>
     </class>

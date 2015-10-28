@@ -11,9 +11,9 @@
 			<generator class="native"/>
 		</id>
 
-		<property name="entranceTime" column="entrancetime" type="timestamp" />
+		<property name="lastTime" column="lastTime" type="timestamp" />
 
-		<property name="departureTime" column="departuretime" type="timestamp" />
+		<property name="totalTime" column="totalTime" type="timestamp" />
 
 		<properties name="AttendanceKey" unique="true">
 			<many-to-one name="event" column="attendances_event" class="Event" not-null="true" lazy="false" />

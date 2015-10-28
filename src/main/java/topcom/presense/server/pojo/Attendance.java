@@ -7,19 +7,19 @@ public class Attendance {
 	private long id;
 	private Event event;
 	private Person person;
-	private Timestamp entranceTime;
-	private Timestamp departureTime;
+	private Timestamp lastTime;
+	private Timestamp totalTime;
 
 	public Attendance() {}
 
 	public Attendance(Event event, Person person, 
-				Timestamp entranceTime, Timestamp departureTime) {
+				Timestamp lastTime, Timestamp totalTime) {
 
 		this.setId(id);
 		this.setEvent(event);
 		this.setPerson(person);
-		this.setEntranceTime(entranceTime);
-		this.setDepartureTime(departureTime);
+		this.setLastTime(lastTime);
+		this.setTotalTime(totalTime);
 	}
 
 	public void setId(long id) {
@@ -46,19 +46,19 @@ public class Attendance {
 		return this.person;
 	}
 
-	public void setEntranceTime(Timestamp entranceTime) {
-		this.entranceTime = entranceTime;
+	public void setLastTime(Timestamp lastTime) {
+		this.lastTime = lastTime;
 	}
 
-	public Timestamp getEntranceTime() {
-		return this.entranceTime;
+	public Timestamp getLastTime() {
+		return this.lastTime;
 	}
 
-	public void setDepartureTime(Timestamp departureTime) {
-		this.departureTime = departureTime;
+	public void setTotalTime(Timestamp totalTime) {
+		this.totalTime = totalTime;
 	}
 
-	public Timestamp getDepartureTime() {
-		return this.departureTime;
+	public Timestamp getTotalTime() {
+		return this.totalTime;
 	}
 }

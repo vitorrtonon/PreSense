@@ -9,10 +9,10 @@ import javax.ws.rs.core.Response;
 import org.glassfish.jersey.server.mvc.Viewable;
 
 /**
- * Root resource (exposed at "hello" path)
+ * Root resource (exposed at "/" path)
  */
-@Path("hello")
-public class Hello {
+@Path("/")
+public class Index {
 
     /**
      * Method handling HTTP GET requests. The returned object will be sent
@@ -22,7 +22,8 @@ public class Hello {
      */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String index() {
-        return "Hello, world!";
+    public Response index() {
+        return Response.ok(new Viewable("/index")).build();
     }
+    
 }

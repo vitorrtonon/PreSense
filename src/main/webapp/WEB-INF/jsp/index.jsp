@@ -1,5 +1,6 @@
 <%@page import="topcom.presense.server.util.*, topcom.presense.server.dao.*, topcom.presense.server.pojo.*, org.hibernate.*, org.hibernate.cfg.*, java.util.*, java.sql.*"%>
 <%
+	/*
 	EventDAO ed = new EventDAO();
 	PersonDAO pd = new PersonDAO();
 	ManagerDAO md = new ManagerDAO();
@@ -38,5 +39,6 @@
 
 		System.out.println("Nome do Sensor: "+e1.getSensors().get(i).getName());
 	}
+	*/
 %>
 Hello!

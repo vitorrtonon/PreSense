@@ -4,6 +4,9 @@ import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
+
+import org.glassfish.jersey.server.mvc.Viewable;
 
 /**
  * Root resource (exposed at "hello" path)
@@ -19,7 +22,7 @@ public class Hello {
      */
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-        return "Hello, Heroku!";
+    public Response index() {
+        return Response.ok(new Viewable("/index")).build();
     }
 }

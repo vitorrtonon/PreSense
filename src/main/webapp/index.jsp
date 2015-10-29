@@ -3,7 +3,7 @@
 	EventDAO ed = new EventDAO();
 	PersonDAO pd = new PersonDAO();
 	ManagerDAO md = new ManagerDAO();
-	SensorDAO sd = new SensorDAO();	
+	SensorDAO sd = new SensorDAO();
 
 	Person person = new Person(new Long(2).longValue(), "Vitor");
 
@@ -16,7 +16,7 @@
 	managers.add(manager);
 
 	Sensor sensor = new Sensor(1, "sensor1");
-	
+
 	ArrayList<Sensor> sensors = new ArrayList<Sensor>();
 	sensors.add(sensor);
 
@@ -35,9 +35,8 @@
 	Event e1 = ed.findEventById(1);
 	System.out.println("Nome do Evento: "+e1.getName());
 	for(int i = 0; i < e1.getSensors().size(); i++) {
-		
+
 		System.out.println("Nome do Sensor: "+e1.getSensors().get(i).getName());
 	}
-
 %>
-	Hello!
+Hello!

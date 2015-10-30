@@ -2,39 +2,39 @@ package topcom.presense.server.pojo;
 
 import java.util.*;
 
-public class Receiver {
+public class Signal {
 
 	private Double distance;
-	private String event;
+	private String kind;
 	private String time;
 	private String uuid;
 	private String major;
 	private String minor;
 	private String user;
-	private String pass;
+	private String passcode;
 
-	public Receiver() {}
+	public Recv() {}
 
-	public Receiver(Double distance, String event, String time,
+	public Recv(Double distance, String kind, String time,
 				String uuid, String major, String minor,
-				String user, String pass) {
+				String user, String passcode) {
 
 		this.setDistance(distance);
-		this.setEvent(event);
+		this.setKind(kind);
 		this.setTime(time);
 		this.setUuid(uuid);
 		this.setMajor(major);
 		this.setMinor(minor);
 		this.setUser(user);
-		this.setPass(pass);
+		this.setPasscode(passcode);
 	}
 
 	private void setDistance(Double distance) {
 		this.distance = distance;
 	}
 
-	private void setEvent(String event) {
-		this.event = event;
+	private void setKind(String kind) {
+		this.kind = kind;
 	}
 
 	private void setTime(String time) {
@@ -57,8 +57,8 @@ public class Receiver {
 		this.user = user;
 	}
 
-	private void setPass(String pass) {
-		this.pass = pass;
+	private void setPasscode(String passcode) {
+		this.passcode = passcode;
 	}
 
 
@@ -66,8 +66,8 @@ public class Receiver {
 		return this.distance;
 	}
 
-	private String getEvent() {
-		return this.event;
+	private String getKind() {
+		return this.kind;
 	}
 
 	private String getTime() {
@@ -90,8 +90,8 @@ public class Receiver {
 		return this.user;
 	}
 
-	private String getPass() {
-		return this.pass;
+	private String getPasscode() {
+		return this.passcode;
 	}
 
 }

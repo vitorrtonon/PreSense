@@ -9,7 +9,7 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://ec2-54-83-51-38.compute-1.amazonaws.com/dds6un1fekil0g</property>
+        <property name="connection.url">jdbc:postgresql://ec2-54-83-51-38.compute-1.amazonaws.com:5432/dds6un1fekil0g</property>
         <property name="connection.username">tealntbarkllln</property>
         <property name="connection.password">HWnzWvdEaVOWFgYDzbP3sJ2354</property>
 

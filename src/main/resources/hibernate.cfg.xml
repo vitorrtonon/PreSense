@@ -9,9 +9,9 @@
 
         <!-- Database connection settings -->
         <property name="connection.driver_class">org.postgresql.Driver</property>
-        <property name="connection.url">jdbc:postgresql://localhost/presense</property>
-        <property name="connection.username">presense</property>
-        <property name="connection.password">presense</property>
+        <property name="connection.url">jdbc:postgresql://ec2-54-83-51-38.compute-1.amazonaws.com/dds6un1fekil0g</property>
+        <property name="connection.username">tealntbarkllln</property>
+        <property name="connection.password">HWnzWvdEaVOWFgYDzbP3sJ2354</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>

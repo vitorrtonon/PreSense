@@ -1,7 +1,6 @@
 package topcom.presense.server;
 
 import java.util.Random;
-import java.security.MessageDigest;
 
 public final class PassCode {
 
@@ -35,7 +34,8 @@ public final class PassCode {
     return new String(buf);
   }
 
-  public static String encrypticPass(String passcode) {
-    /* TO-DO */ 
+  public static String encryptPass(String passcode) {
+    /* TO-DO */
+    return passcode;
   }
 }

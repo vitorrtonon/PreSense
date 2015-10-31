@@ -10,7 +10,6 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.Calendar;
 import java.sql.Timestamp;
-import java.security.MessageDigest;
 
 /**
  * Root resource (exposed at "auth" path)
@@ -29,12 +28,12 @@ public class SensorCommHandler {
     public Auth authComm() {
         @QueryParam("PIN") int pin;
         // Identify sensor
-        Sensor s = SensorDao.findSensorByPIN(pin); 
+        Sensor s = null; //SensorDao.findSensorByPIN(pin); 
         if (s == null) return null; // What should it return?
         // Create simple random password
         String passcode = PassCode.generatePass();
         // Encrypt it
-        String encPass = PassCode.encrypticPass(passcode);
+        String encPass = PassCode.encryptPass(passcode);
         // Update sql ("consumes" PIN)
         SensorDao.update(s.getId(), s.getName(), s.getEvent(), encPass, null);
         // Answer to senser
@@ -61,8 +60,8 @@ public class SensorCommHandler {
         Timestamp time = new Timestamp(timeMil);
 
         // Retrieve event using sensor's search
-        Event ev = EventDAO.findEventById(
-            SensorDao.findSensorByNameAndPass(recv.getUser(), recv.getPass()).getEvent());
+        Event ev = EventDAO.findEventById(1);
+        //    SensorDao.findSensorByNameAndPass(recv.getUser(), recv.getPass()).getEvent());
         if (ev == null) {
             System.err.println("Unregistered event")
             return;
@@ -94,38 +93,5 @@ public class SensorCommHandler {
                 return;
             }
         }
-    }
-
-
-    Private String generateRandomPassCode() {
-        String pass = new String();
-
-        private static final char[] symbols;
-
-         static {
-           StringBuilder tmp = new StringBuilder();
-           for (char ch = '0'; ch <= '9'; ++ch)
-             tmp.append(ch);
-           for (char ch = 'a'; ch <= 'z'; ++ch)
-             tmp.append(ch);
-           symbols = tmp.toString().toCharArray();
-         }   
-
-         private final Random random = new Random();
-
-         private final char[] buf;
-
-         public RandomString(int length) {
-           if (length < 1)
-             throw new IllegalArgumentException("length < 1: " + length);
-           buf = new char[length];
-         }
-
-         public String nextString() {
-           for (int idx = 0; idx < buf.length; ++idx) 
-             buf[idx] = symbols[random.nextInt(symbols.length)];
-           return new String(buf);
-         }
-        return pass;
     }
 }

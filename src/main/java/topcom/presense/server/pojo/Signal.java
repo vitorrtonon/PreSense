@@ -4,53 +4,16 @@ import java.util.*;
 
 public class Signal {
 
-	private Double distance;
-	private String kind;
-	private String time;
-	private String uuid;
-	private String major;
-	private String minor;
+	private ArrayList<Alert> alerts;
 	private String user;
 	private String passcode;
 
-	public Recv() {}
+	public Signal() {}
 
-	public Recv(Double distance, String kind, String time,
-				String uuid, String major, String minor,
-				String user, String passcode) {
-
-		this.setDistance(distance);
-		this.setKind(kind);
-		this.setTime(time);
-		this.setUuid(uuid);
-		this.setMajor(major);
-		this.setMinor(minor);
+	public Signal(String user, String passcode, ArrayList<Alert> alerts) {
 		this.setUser(user);
 		this.setPasscode(passcode);
-	}
-
-	private void setDistance(Double distance) {
-		this.distance = distance;
-	}
-
-	private void setKind(String kind) {
-		this.kind = kind;
-	}
-
-	private void setTime(String time) {
-		this.time = time;
-	}
-
-	private void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
-
-	private void setMajor(String major) {
-		this.major = major;
-	}
-
-	private void setMinor(String minor) {
-		this.minor = minor;
+		this.setAlerts(alerts);
 	}
 
 	private void setUser(String user) {
@@ -61,29 +24,8 @@ public class Signal {
 		this.passcode = passcode;
 	}
 
-
-	private Double getDistance() {
-		return this.distance;
-	}
-
-	private String getKind() {
-		return this.kind;
-	}
-
-	private String getTime() {
-		return this.time;
-	}
-
-	private String getUuid() {
-		return this.uuid;
-	}
-
-	private String getMajor() {
-		return this.major;
-	}
-
-	private String getMinor() {
-		return this.minor;
+	private void setAlerts(ArrayList<Alert> alerts) {
+		this.alerts = new ArrayList<Alert>(alerts);
 	}
 
 	private String getUser() {
@@ -92,6 +34,10 @@ public class Signal {
 
 	private String getPasscode() {
 		return this.passcode;
+	}
+	
+	private ArrayList<Alert> getAlerts() {
+		return this.alerts;
 	}
 
 }

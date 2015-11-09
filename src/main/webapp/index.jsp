@@ -28,16 +28,5 @@
 	ed.insert(event);
 	sd.insert(sensor);
 
-	Sensor s1 = sd.findSensorById(1);
-	System.out.println("\n\n"+s1.getName());
-	System.out.println(s1.getEvent().getName());
-
-	Event e1 = ed.findEventById(1);
-	System.out.println("Nome do Evento: "+e1.getName());
-	for(int i = 0; i < e1.getSensors().size(); i++) {
-		
-		System.out.println("Nome do Sensor: "+e1.getSensors().get(i).getName());
-	}
-
 %>
 	Hello!

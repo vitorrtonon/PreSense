@@ -1,0 +1,295 @@
+{
+	"PresenseEventData": {
+		"name": "PresenseEventData",
+		"type": "Event",
+		"isList": true,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "event",
+				"fields": [
+					{
+						"name": "eventId",
+						"type": "long"
+					},
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "startdate",
+						"type": "timestamp"
+					},
+					{
+						"name": "enddate",
+						"type": "timestamp"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "presense",
+		"ignoreCase": false,
+		"matchMode": "anywhere",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"_id": "wm-PresenseEventData-wm.LiveVariable-1446255044752",
+		"package": "com.presense.presense.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.presense.Event",
+			"tableType": "TABLE"
+		},
+		"bindCount": 4,
+		"filterFields": {}
+	},
+	"insert_event_var": {
+		"name": "insert_event_var",
+		"type": "Event",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "event",
+				"fields": [
+					{
+						"name": "eventId",
+						"type": "long",
+						"value": "bind:Widgets.create_event_id_text.datavalue"
+					},
+					{
+						"name": "name",
+						"type": "string",
+						"value": "bind:Widgets.create_event_name_text.datavalue"
+					},
+					{
+						"name": "startdate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_start_date.datavalue"
+					},
+					{
+						"name": "enddate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_end_date.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "insert",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "event_insert_success.show",
+		"onError": "event_insert_error.show",
+		"liveSource": "presense",
+		"ignoreCase": false,
+		"matchMode": "exact",
+		"filterFields": {},
+		"inputFields": {},
+		"category": "wm.LiveVariable",
+		"_id": "wm-insert_event_var-wm.LiveVariable-1446503028604",
+		"package": "com.presense.presense.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.presense.Event",
+			"tableType": "TABLE"
+		}
+	},
+	"event_create_clear": {
+		"name": "event_create_clear",
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_create",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-event_create_clear-wm.NavigationVariable-1446503891046"
+	},
+	"notificationVariable1": {
+		"name": "notificationVariable1",
+		"owner": "Page",
+		"operation": "alert",
+		"dataBinding": {
+			"text": "Evento inserido com sucesso!",
+			"okButtonText": "Ok",
+			"alerttype": "success"
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-notificationVariable1-wm.NotificationVariable-1446504244805"
+	},
+	"event_create_back": {
+		"name": "event_create_back",
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_create",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-event_create_back-wm.NavigationVariable-1446505192248"
+	},
+	"event_insert_error": {
+		"name": "event_insert_error",
+		"owner": "Page",
+		"operation": "alert",
+		"dataBinding": {
+			"text": "O evento não pôde ser criado!",
+			"okButtonText": "Ok",
+			"alerttype": "error"
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-event_insert_error-wm.NotificationVariable-1446505930463"
+	}
+}

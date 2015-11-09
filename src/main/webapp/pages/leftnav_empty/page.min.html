@@ -1,0 +1,37 @@
+<style id="leftnav_empty.css">
+
+</style>
+<script id="leftnav_empty.js">
+Application.$controller("leftnav_emptyPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+</script>
+<script id="leftnav_empty.variables.json">
+var _leftnav_emptyPage_Variables_ ={};
+</script>
+<script id="leftnav_empty.html" type="text/ng-template">
+<wm-partial name="partial1" data-ng-controller="leftnav_emptyPageController" type="leftnav">
+    <wm-nav name="nav1" type="pills" layout="stacked">
+        <wm-nav-item name="nav_item1"></wm-nav-item>
+        <wm-nav-item name="nav_item2"></wm-nav-item>
+    </wm-nav>
+</wm-partial>
+</script>

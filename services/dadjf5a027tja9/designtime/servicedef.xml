@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="dadjf5a027tja9" type="DataService" springFile="dadjf5a027tja9.spring.xml">
+    <dataobjects>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Event">
+            <element name="eventId" typeRef="long" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="startdate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="enddate" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="attendances" typeRef="com.presense.dadjf5a027tja9.Attendance" isList="true" allowNull="true"/>
+            <element name="eventmanagers" typeRef="com.presense.dadjf5a027tja9.Eventmanager" isList="true" allowNull="true"/>
+            <element name="personevents" typeRef="com.presense.dadjf5a027tja9.Personevent" isList="true" allowNull="true"/>
+            <element name="sensors" typeRef="com.presense.dadjf5a027tja9.Sensor" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Beacon">
+            <element name="beaconId" typeRef="string" isList="false" allowNull="false"/>
+            <element name="person" typeRef="com.presense.dadjf5a027tja9.Person" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Person">
+            <element name="personId" typeRef="long" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="attendances" typeRef="com.presense.dadjf5a027tja9.Attendance" isList="true" allowNull="true"/>
+            <element name="beacons" typeRef="com.presense.dadjf5a027tja9.Beacon" isList="true" allowNull="true"/>
+            <element name="personevents" typeRef="com.presense.dadjf5a027tja9.Personevent" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Manager">
+            <element name="username" typeRef="string" isList="false" allowNull="false"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="password" typeRef="java.lang.String" isList="false" allowNull="true"/>
+            <element name="role" typeRef="java.lang.String" isList="false" allowNull="false"/>
+            <element name="eventmanagers" typeRef="com.presense.dadjf5a027tja9.Eventmanager" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Attendance">
+            <element name="attendanceId" typeRef="long" isList="false" allowNull="false"/>
+            <element name="event" typeRef="com.presense.dadjf5a027tja9.Event" isList="false" allowNull="false"/>
+            <element name="person" typeRef="com.presense.dadjf5a027tja9.Person" isList="false" allowNull="false"/>
+            <element name="lasttime" typeRef="java.util.Date" isList="false" allowNull="true"/>
+            <element name="totaltime" typeRef="java.util.Date" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Eventmanager">
+            <element name="id" typeRef="com.presense.dadjf5a027tja9.EventmanagerId" isList="false" allowNull="false"/>
+            <element name="event" typeRef="com.presense.dadjf5a027tja9.Event" isList="false" allowNull="false"/>
+            <element name="manager" typeRef="com.presense.dadjf5a027tja9.Manager" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.EventmanagerId">
+            <element name="eventId" typeRef="java.lang.Long" isList="false" allowNull="false"/>
+            <element name="managerId" typeRef="java.lang.String" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Sensor">
+            <element name="sensorId" typeRef="long" isList="false" allowNull="false"/>
+            <element name="event" typeRef="com.presense.dadjf5a027tja9.Event" isList="false" allowNull="true"/>
+            <element name="name" typeRef="java.lang.String" isList="false" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.Personevent">
+            <element name="id" typeRef="com.presense.dadjf5a027tja9.PersoneventId" isList="false" allowNull="false"/>
+            <element name="event" typeRef="com.presense.dadjf5a027tja9.Event" isList="false" allowNull="false"/>
+            <element name="person" typeRef="com.presense.dadjf5a027tja9.Person" isList="false" allowNull="false"/>
+        </dataobject>
+        <dataobject javaType="com.presense.dadjf5a027tja9.PersoneventId">
+            <element name="eventId" typeRef="java.lang.Long" isList="false" allowNull="false"/>
+            <element name="personId" typeRef="java.lang.Long" isList="false" allowNull="false"/>
+        </dataobject>
+    </dataobjects>
+</service>

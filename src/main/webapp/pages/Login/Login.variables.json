@@ -1,0 +1,274 @@
+{
+	"Dfp1548n5sephlManagerData": {
+		"name": "Dfp1548n5sephlManagerData",
+		"type": "Manager",
+		"isList": true,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": true,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dfp1548n5sephl",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"_id": "wm-Dfp1548n5sephlManagerData-wm.LiveVariable-1446080037585",
+		"package": "com.presense.dfp1548n5sephl.Manager",
+		"tableName": "manager",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "username",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "username",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "password",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "password",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "role",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "role",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 10,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "admin"
+				}
+			],
+			"primaryKeys": [
+				"username"
+			],
+			"entityName": "Manager",
+			"fullyQualifiedName": "com.presense.dfp1548n5sephl.Manager",
+			"tableType": "TABLE"
+		},
+		"bindCount": 2
+	},
+	"loginVariable": {
+		"name": "loginVariable",
+		"type": "string",
+		"owner": "Page",
+		"dataSet": {
+			"username": "",
+			"password": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "username",
+						"type": "string",
+						"value": "bind:Widgets.login_username_text.datavalue"
+					},
+					{
+						"name": "password",
+						"type": "string",
+						"value": "bind:Widgets.login_password_text.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onError": "Javascript",
+		"useDefaultSuccessHandler": true,
+		"category": "wm.LoginVariable",
+		"_id": "wm-loginVariable-wm.LoginVariable-1445996238604"
+	},
+	"insert_event_var": {
+		"name": "insert_event_var",
+		"type": "Event",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "event",
+				"fields": [
+					{
+						"name": "eventId",
+						"type": "long",
+						"value": "bind:Widgets.create_event_id_text.datavalue"
+					},
+					{
+						"name": "name",
+						"type": "string",
+						"value": "bind:Widgets.create_event_name_text.datavalue"
+					},
+					{
+						"name": "startdate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_start_date.datavalue"
+					},
+					{
+						"name": "enddate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_end_date.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 1,
+		"designMaxResults": 10,
+		"operation": "insert",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "notificationVariable1",
+		"liveSource": "dfp1548n5sephl",
+		"ignoreCase": false,
+		"matchMode": "exact",
+		"filterFields": {},
+		"inputFields": {},
+		"category": "wm.LiveVariable",
+		"_id": "wm-insert_event_var-wm.LiveVariable-1446260804173",
+		"package": "com.presense.presense.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.presense.Event",
+			"tableType": "TABLE"
+		}
+	},
+	"notVar_insert": {
+		"name": "notVar_insert",
+		"owner": "Page",
+		"operation": "alert",
+		"dataBinding": {
+			"text": "INSERIDO!",
+			"okButtonText": "OK",
+			"alerttype": "success"
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-notVar_insert-wm.NotificationVariable-1446262465016"
+	}
+}

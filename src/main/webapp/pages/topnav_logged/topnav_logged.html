@@ -1,0 +1,25 @@
+<wm-partial name="partial1" data-ng-controller="topnav_loggedPageController" type="topnav">
+    <wm-navbar name="navbar1">
+        <wm-nav name="nav1" type="navbar" class="navbar-left">
+            <wm-nav-item name="nav_item1"></wm-nav-item>
+            <wm-nav-item name="nav_item2"></wm-nav-item>
+            <wm-nav-item name="nav_item3"></wm-nav-item>
+            <wm-nav-item name="nav_item4"></wm-nav-item>
+            <wm-nav-item name="nav_item7">
+                <wm-anchor on-click="goToPage_Logged_Home" name="logged_home_button" class="logged-home-button" caption="Home" iconclass="glyphicon glyphicon-home"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item8">
+                <wm-anchor on-click="goToPage_Events;navCall_show_event_view" name="logged_events_button" class="logged-events-button" caption="Eventos" iconclass="fa fa-calendar"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item9">
+                <wm-anchor name="logged_people_button" class="logged-people-button" caption="Participantes" iconclass="fa fa-group" on-click="goToPage_Login"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+        <wm-nav name="nav2" type="navbar" class="navbar-right">
+            <wm-nav-item name="nav_item5"></wm-nav-item>
+            <wm-nav-item name="nav_item6">
+                <wm-anchor name="logged_logout_button" class="login-button" caption="Logout" iconclass="glyphicon glyphicon-log-out" on-click="logoutVariable"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+    </wm-navbar>
+</wm-partial>

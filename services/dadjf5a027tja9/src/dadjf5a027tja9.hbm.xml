@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.presense.dadjf5a027tja9">
+    <class entity-name="com.presense.dadjf5a027tja9.Event" table="event" schema="public">
+        <id name="eventId" type="long">
+            <column name="event_id" length="255" not-null="true" precision="19"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="startdate" type="timestamp">
+            <column name="startdate" length="29" not-null="false" precision="19"/>
+        </property>
+        <property name="enddate" type="timestamp">
+            <column name="enddate" length="29" not-null="false" precision="19"/>
+        </property>
+        <set name="attendances" table="event" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="attendances_event"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Attendance"/>
+        </set>
+        <set name="eventmanagers" table="event" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="event_id"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Eventmanager"/>
+        </set>
+        <set name="sensors" table="event" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="event"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Sensor"/>
+        </set>
+        <set name="personevents" table="event" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="event_id"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Personevent"/>
+        </set>
+    </class>
+    <class entity-name="com.presense.dadjf5a027tja9.Beacon" table="beacon" schema="public">
+        <id name="beaconId" type="string">
+            <column name="beacon_id" length="255" not-null="true" precision="19"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one name="person" class="com.presense.dadjf5a027tja9.Person" fetch="select">
+            <column name="person" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+    </class>
+    <class entity-name="com.presense.dadjf5a027tja9.Person" table="person" schema="public">
+        <id name="personId" type="long">
+            <column name="person_id" length="255" not-null="true" precision="19"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="255" not-null="false" precision="19"/>
+        </property>
+        <set name="beacons" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="person"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Beacon"/>
+        </set>
+        <set name="attendances" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="attendances_person"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Attendance"/>
+        </set>
+        <set name="personevents" table="person" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="person_id"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Personevent"/>
+        </set>
+    </class>
+    <class entity-name="com.presense.dadjf5a027tja9.Manager" table="manager" schema="public">
+        <id name="username" type="string">
+            <column name="username" length="255" not-null="true" precision="19"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="255" not-null="false" precision="19"/>
+        </property>
+        <property name="role" type="string">
+            <column name="role" length="10" not-null="true" precision="19" default="'admin'"/>
+        </property>
+        <set name="eventmanagers" table="manager" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="manager_id"/>
+            </key>
+            <one-to-many class="com.presense.dadjf5a027tja9.Eventmanager"/>
+        </set>
+    </class>
+    <class entity-name="com.presense.dadjf5a027tja9.Attendance" table="attendance" schema="public">
+        <id name="attendanceId" type="long">
+            <column name="attendance_id" length="255" not-null="true" precision="19"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="lasttime" type="timestamp">
+            <column name="lasttime" length="29" not-null="false" precision="19"/>
+        </property>
+        <property name="totaltime" type="timestamp">
+            <column name="totaltime" length="29" not-null="false" precision="19"/>
+        </property>
+        <many-to-one name="event" class="com.presense.dadjf5a027tja9.Event" fetch="select">
+            <column name="attendances_event" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+        <many-to-one name="person" class="com.presense.dadjf5a027tja9.Person" fetch="select">
+            <column name="attendances_person" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+    </class>
+    <class entity-name="com.presense.dadjf5a027tja9.Eventmanager" table="eventmanager" schema="public">
+        <composite-id name="id" class="EventmanagerId">
+            <key-property name="eventId" type="long">
+                <column name="event_id" length="255" not-null="true" precision="19"/>
+            </key-property>
+            <key-property name="managerId" type="string">
+                <column name="manager_id" length="255" not-null="true" precision="19"/>
+            </key-property>
+        </composite-id>
+        <many-to-one
+            name="event"
+            class="com.presense.dadjf5a027tja9.Event"
+            fetch="select"
+            update="false"
+            insert="false">
+            <column name="event_id" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+        <many-to-one
+            name="manager"
+            class="com.presense.dadjf5a027tja9.Manager"
+            fetch="select"
+            update="false"
+            insert="false">
+            <column name="manager_id" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+    </class>
+    <class entity-name="com.presense.dadjf5a027tja9.Sensor" table="sensor" schema="public">
+        <id name="sensorId" type="long">
+            <column name="sensor_id" length="255" not-null="true" precision="19"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string">
+            <column name="name" length="255" not-null="false" precision="19"/>
+        </property>
+        <many-to-one name="event" class="com.presense.dadjf5a027tja9.Event" fetch="select">
+            <column name="event" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+    </class>
+    <class entity-name="com.presense.dadjf5a027tja9.Personevent" table="personevent" schema="public">
+        <composite-id name="id" class="PersoneventId">
+            <key-property name="eventId" type="long">
+                <column name="event_id" length="255" not-null="true" precision="19"/>
+            </key-property>
+            <key-property name="personId" type="long">
+                <column name="person_id" length="255" not-null="true" precision="19"/>
+            </key-property>
+        </composite-id>
+        <many-to-one
+            name="event"
+            class="com.presense.dadjf5a027tja9.Event"
+            fetch="select"
+            update="false"
+            insert="false">
+            <column name="event_id" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+        <many-to-one
+            name="person"
+            class="com.presense.dadjf5a027tja9.Person"
+            fetch="select"
+            update="false"
+            insert="false">
+            <column name="person_id" length="255" not-null="true" precision="19"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

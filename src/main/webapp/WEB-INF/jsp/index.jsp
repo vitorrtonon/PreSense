@@ -1,9 +1,10 @@
 <%@page import="topcom.presense.server.util.*, topcom.presense.server.dao.*, topcom.presense.server.pojo.*, org.hibernate.*, org.hibernate.cfg.*, java.util.*, java.sql.*"%>
 <%
+	/*
 	EventDAO ed = new EventDAO();
 	PersonDAO pd = new PersonDAO();
 	ManagerDAO md = new ManagerDAO();
-	SensorDAO sd = new SensorDAO();	
+	SensorDAO sd = new SensorDAO();
 
 	Person person = new Person(new Long(2).longValue(), "Vitor");
 
@@ -16,7 +17,7 @@
 	managers.add(manager);
 
 	Sensor sensor = new Sensor(1, "sensor1");
-	
+
 	ArrayList<Sensor> sensors = new ArrayList<Sensor>();
 	sensors.add(sensor);
 
@@ -27,6 +28,5 @@
 	md.insert(manager);
 	ed.insert(event);
 	sd.insert(sensor);
-
 %>
-	Hello!
+Hello!

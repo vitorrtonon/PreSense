@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 import java.util.*;
 
 
-@Path("/api")
+@Path("api")
 public class SensorCommHandler {
 
     /**
@@ -31,6 +31,7 @@ public class SensorCommHandler {
     @Path("auth")
     public Auth authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
+        return new Auth("teste", "asdlajsdal");/*
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
         if (s == null) return null; // What should it return?
@@ -43,7 +44,7 @@ public class SensorCommHandler {
         s.setPin(-1);
         dS.update(s);
         // Answer to sensor
-        return new Auth(s.getName(), passcode);
+        return new Auth(s.getName(), passcode);*/
     }
 
      /**

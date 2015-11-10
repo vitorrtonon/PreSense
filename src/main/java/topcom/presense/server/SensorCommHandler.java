@@ -16,7 +16,7 @@ import java.sql.Timestamp;
 import java.util.*;
 
 
-@Path("/api")
+@Path("api")
 public class SensorCommHandler {
 
     /**
@@ -33,7 +33,7 @@ public class SensorCommHandler {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
-        if (s == null) return null; // What should it return?
+        if (s == null) return new Auth("", "", "Invalid PIN"); // Invalid access
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
@@ -43,7 +43,7 @@ public class SensorCommHandler {
         s.setPin(-1);
         dS.update(s);
         // Answer to sensor
-        return new Auth(s.getName(), passcode);
+        return new Auth(s.getName(), passcode, "Valid PIN");
     }
 
      /**

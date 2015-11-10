@@ -15,10 +15,8 @@ import java.util.Calendar;
 import java.sql.Timestamp;
 import java.util.*;
 
-/**
- * Root resource (exposed at "auth" path)
- */
-@Path("auth")
+
+@Path("/api")
 public class SensorCommHandler {
 
     /**
@@ -27,8 +25,10 @@ public class SensorCommHandler {
      *
      * @return String that will be returned as a text/plain response.
      */
+    
     @GET
     @Produces(MediaType.APPLICATION_JSON)
+    @Path("auth")
     public Auth authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
@@ -51,7 +51,9 @@ public class SensorCommHandler {
      * contain a "application/json" media type
      */
     @POST
-    @Produces(MediaType.APPLICATION_JSON)    
+    @Consumes(MediaType.APPLICATION_JSON)    
+    @Produces(MediaType.TEXT_PLAIN)    
+    @Path("alert")
     public String signalComm(ArrayList<Signal> recv) {
         
         // For test purpose

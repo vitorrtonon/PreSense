@@ -7,6 +7,7 @@ public class Manager {
 	private String name;
 	private String username;
 	private String password;
+	private String role;
 	private List<Event> events;
 
 	public Manager() {}
@@ -51,6 +52,14 @@ public class Manager {
 
 	public String getPassword() {
 		return this.password;
+	}
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+	public String getRole() {
+		return this.role;
 	}
 
 	public void setEvents(List<Event> events) {

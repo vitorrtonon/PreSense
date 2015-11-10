@@ -12,6 +12,7 @@
         <property name="connection.url">jdbc:postgresql://ec2-107-21-223-147.compute-1.amazonaws.com:5432/dadjf5a027tja9</property>
         <property name="connection.username">jcdlwuyogrgmcq</property>
         <property name="connection.password">w2EBvGCUxBHDAo0ti9ar5z24VF</property>
+        <property name="hibernate.connection.requireSSL">true</property>
 
         <!-- JDBC connection pool (use the built-in) -->
         <property name="connection.pool_size">1</property>

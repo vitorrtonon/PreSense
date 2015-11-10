@@ -24,51 +24,51 @@ public class Alert {
 		this.setMinor(minor);
 	}
 
-	private void setDistance(Double distance) {
+	public void setDistance(Double distance) {
 		this.distance = distance;
 	}
 
-	private void setKind(String kind) {
+	public void setKind(String kind) {
 		this.kind = kind;
 	}
 
-	private void setTime(String time) {
+	public void setTime(String time) {
 		this.time = time;
 	}
 
-	private void setUuid(String uuid) {
+	public void setUuid(String uuid) {
 		this.uuid = uuid;
 	}
 
-	private void setMajor(String major) {
+	public void setMajor(String major) {
 		this.major = major;
 	}
 
-	private void setMinor(String minor) {
+	public void setMinor(String minor) {
 		this.minor = minor;
 	}
 
-	private Double getDistance() {
+	public Double getDistance() {
 		return this.distance;
 	}
 
-	private String getKind() {
+	public String getKind() {
 		return this.kind;
 	}
 
-	private String getTime() {
+	public String getTime() {
 		return this.time;
 	}
 
-	private String getUuid() {
+	public String getUuid() {
 		return this.uuid;
 	}
 
-	private String getMajor() {
+	public String getMajor() {
 		return this.major;
 	}
 
-	private String getMinor() {
+	public String getMinor() {
 		return this.minor;
 	}
 

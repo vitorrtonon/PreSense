@@ -16,27 +16,27 @@ public class Signal {
 		this.setAlerts(alerts);
 	}
 
-	private void setUser(String user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 
-	private void setPasscode(String passcode) {
+	public void setPasscode(String passcode) {
 		this.passcode = passcode;
 	}
 
-	private void setAlerts(ArrayList<Alert> alerts) {
+	public void setAlerts(ArrayList<Alert> alerts) {
 		this.alerts = new ArrayList<Alert>(alerts);
 	}
 
-	private String getUser() {
+	public String getUser() {
 		return this.user;
 	}
 
-	private String getPasscode() {
+	public String getPasscode() {
 		return this.passcode;
 	}
 	
-	private ArrayList<Alert> getAlerts() {
+	public ArrayList<Alert> getAlerts() {
 		return this.alerts;
 	}
 

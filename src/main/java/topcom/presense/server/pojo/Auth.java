@@ -21,19 +21,19 @@ public class Auth {
 		this.setPasscode(passcode);
 	}
 	
-	private void setUser(String user) {
+	public void setUser(String user) {
 		this.user = user;
 	}
 
-	private void setPasscode(String passcode) {
+	public void setPasscode(String passcode) {
 		this.passcode = passcode;
 	}
 
-	private String getUser() {
+	public String getUser() {
 		return this.user;
 	}
 
-	private String getPasscode() {
+	public String getPasscode() {
 		return this.passcode;
 	}
 

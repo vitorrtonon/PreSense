@@ -1,5 +1,8 @@
 package topcom.presense.server;
 
+import topcom.presense.server.pojo.*;
+import topcom.presense.server.dao.*;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
@@ -26,18 +29,20 @@ public class SensorCommHandler {
      */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Auth authComm() {
-        @QueryParam("PIN") int pin;
+    public Auth authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
-        Sensor s = null; //SensorDao.findSensorByPIN(pin); 
+        SensorDAO dS = new SensorDAO();
+        Sensor s = null; //dS.findSensorByPIN(pin); 
         if (s == null) return null; // What should it return?
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
         String encPass = p.encryptPass(passcode);
         // Update sql ("consumes" PIN)
-        SensorDao.update(s.getId(), s.getName(), s.getEvent(), encPass, null);
-        // Answer to senser
+        //s.setPasscode(encPass);
+        //s.setPin(null);
+        //dS.update(s);
+        // Answer to sensor
         return new Auth(s.getName(), passcode);
     }
 
@@ -49,10 +54,31 @@ public class SensorCommHandler {
     @Produces(MediaType.APPLICATION_JSON)    
     public String signalComm(ArrayList<Signal> recv) {
         
+        // For test purpose
+        String ret = "";
+
+        for (Signal sign : recv) {
+            ret += "User = " + sign.getUser() + " Passcode = " + sign.getPasscode();
+            ret += "\n Um sensor será buscado por essas credenciais, pelo " +
+            "qual se recuperará o evento\nInicia-se a leitura de alertas:\n";
+            // Get json subobjects (alert list)
+            ArrayList<Alert> evAlerts = new ArrayList<>(sign.getAlerts());
+            for (Alert al : evAlerts) { // For each one...
+                ret += "Beacon ID = " + al.getMinor() + al.getMajor() 
+                        + al.getUuid();
+                ret += "Timestamp = " + al.getTime();
+                ret += "Signal kind = " + al.getKind();
+            }
+        }
+
+        return ret;
+        /*
         for (Signal sign : recv) {
             // Retrieve event using sensor's search
-            Event ev = EventDAO.findEventById(1);
-            //SensorDao.findSensorByNameAndPass(sign.getUser(), 
+            EventDAO dEv = new EventDAO();
+            Event ev = dEV.findEventById(1);
+            SensorDAO dSens = new SensorDAO();
+            //Event ev = dSens.findSensorByNameAndPass(sign.getUser(), 
             //                                  sign.getPass()).getEvent();
             if (ev == null) {
                 System.err.println("Unregistered event");
@@ -61,15 +87,15 @@ public class SensorCommHandler {
             // Get json subobjects (alert list)
             ArrayList<Alert> evAlerts = new ArrayList<>(sign.getAlerts());
             for (Alert al : evAlerts) { // For each one...
-                if (!alertHandling(al))  // Call handler
+                if (!alertHandling(al, ev))  // Call handler
                     System.err.println("Error in json alert.");
             }
         }
 
-        return "ok";
+        return "ok";*/
     }
 
-    public boolean alertHandling(Alert recv) {
+    public boolean alertHandling(Alert recv, Event ev) {
         // Compose beacon ID
         String bId = recv.getMinor() + recv.getMajor() + recv.getUuid();
         
@@ -80,30 +106,34 @@ public class SensorCommHandler {
                 Integer.parseInt(t[2]), Integer.parseInt(t[3]), 
                 Integer.parseInt(t[4]), Integer.parseInt(t[5]));
         Long timeMil = cal.getTimeInMillis();
-        Timestamp time = new Timestamp(timeMil);
+        Timestamp curTime = new Timestamp(timeMil);
 
         // Retrieve person using beacon's search
-        Person p = BeaconDAO.findBeaconById(bId).getPerson();
+        BeaconDAO dBeac = new BeaconDAO(); 
+        Person p = dBeac.findBeaconById(bId).getPerson();
         if (p == null) {
             System.err.println("Unregistered person");
             return false;
         }
                 
         // Search for Attendance, if doesn't exist, creat it
-        Attendance att = findAttendanceByEventAndPerson(ev, p);
-        if (att == null) att = new Attendance(ev, p, new Timestamp(0), time);
+        AttendanceDAO dAtt = new AttendanceDAO();
+        Attendance att = dAtt.findAttendanceByEventAndPerson(ev.getId(), p.getId());
+        if (att == null) att = new Attendance(ev, p, new Timestamp(0), curTime);
         else {
             // Process rightful kind of signal
-            if (recv.getKind().equals("in")) att.setLastTime(time);
+            if (recv.getKind().equals("in")) att.setLastTime(curTime);
             else if (recv.getKind().equals("update")) {
-                Long delta = timeMil - att.getLastTime().getTime();
-                att.setTotalTime(att.getTotalTime.getTime() + delta);
-                att.setLastTime(time);
+                long newTime = att.getTotalTime().getTime() + 
+                            (timeMil - att.getLastTime().getTime());
+                att.setTotalTime(new Timestamp(newTime));
+                att.setLastTime(curTime);
             }
             else if (!recv.getKind().equals("out")) {
                 System.err.println("Invalid communication kind");
                 return false;
             }
+            dAtt.update(att);
         }
         return true;
     }

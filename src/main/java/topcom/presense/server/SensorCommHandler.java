@@ -32,16 +32,16 @@ public class SensorCommHandler {
     public Auth authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
-        Sensor s = null; //dS.findSensorByPIN(pin); 
+        Sensor s = dS.findSensorByPin(pin); 
         if (s == null) return null; // What should it return?
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
         String encPass = p.encryptPass(passcode);
         // Update sql ("consumes" PIN)
-        //s.setPasscode(encPass);
-        //s.setPin(null);
-        //dS.update(s);
+        s.setPasscode(encPass);
+        s.setPin(-1);
+        dS.update(s);
         // Answer to sensor
         return new Auth(s.getName(), passcode);
     }

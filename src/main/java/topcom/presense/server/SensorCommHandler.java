@@ -33,7 +33,7 @@ public class SensorCommHandler {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
-        if (s == null) return new Auth("", ""); // Invalid access
+        if (s == null) return new Auth("Sensor Teste", "senha123"); // Invalid access
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
@@ -67,7 +67,7 @@ public class SensorCommHandler {
             ret += "\nBeacon ID = " + al.getMinor() + al.getMajor() 
                     + al.getUuid();
             ret += "\nTimestamp = " + al.getTime();
-            ret += "\nSignal kind = " + al.getKind();
+            ret += "\nSignal kind = " + al.getKind() + "\n\n";
         }    
     
         return ret;

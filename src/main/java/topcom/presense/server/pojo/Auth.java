@@ -5,39 +5,28 @@ import java.util.*;
 public class Auth {
 
 	private String user;
-	private String passcode;
-	private String message;
+	private String pass;
 
 	public Auth() {}
 
-	public Auth(String user, String passcode, String message) {
+	public Auth(String user, String pass) {
 		this.setUser(user);
-		this.setPasscode(passcode);
-		this.setMessage(message);
+		this.setPass(pass);
 	}
 	
 	public void setUser(String user) {
 		this.user = user;
 	}
 
-	public void setPasscode(String passcode) {
-		this.passcode = passcode;
-	}
-
-	public void setMessage(String message) {
-		this.message = message;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
 	public String getUser() {
 		return this.user;
 	}
 
-	public String getPasscode() {
-		return this.passcode;
+	public String getPass() {
+		return this.pass;
 	}
-
-	public String getMessage() {
-		return this.message;
-	}
-
 }

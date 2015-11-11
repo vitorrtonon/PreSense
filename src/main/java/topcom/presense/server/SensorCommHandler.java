@@ -64,10 +64,10 @@ public class SensorCommHandler {
         // Get json subobjects (alert list)
         ArrayList<Alert> evAlerts = new ArrayList<>(recv.getAlerts());
         for (Alert al : evAlerts) { // For each one...
-            ret += "Beacon ID = " + al.getMinor() + al.getMajor() 
+            ret += "\nBeacon ID = " + al.getMinor() + al.getMajor() 
                     + al.getUuid();
-            ret += "Timestamp = " + al.getTime();
-            ret += "Signal kind = " + al.getKind();
+            ret += "\nTimestamp = " + al.getTime();
+            ret += "\nSignal kind = " + al.getKind();
         }    
     
         return ret;

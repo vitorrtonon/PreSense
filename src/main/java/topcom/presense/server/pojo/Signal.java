@@ -6,13 +6,13 @@ public class Signal {
 
 	private ArrayList<Alert> alerts;
 	private String user;
-	private String passcode;
+	private String pass;
 
 	public Signal() {}
 
-	public Signal(String user, String passcode, ArrayList<Alert> alerts) {
+	public Signal(String user, String pass, ArrayList<Alert> alerts) {
 		this.setUser(user);
-		this.setPasscode(passcode);
+		this.setPass(pass);
 		this.setAlerts(alerts);
 	}
 
@@ -20,8 +20,8 @@ public class Signal {
 		this.user = user;
 	}
 
-	public void setPasscode(String passcode) {
-		this.passcode = passcode;
+	public void setPass(String pass) {
+		this.pass = pass;
 	}
 
 	public void setAlerts(ArrayList<Alert> alerts) {
@@ -32,8 +32,8 @@ public class Signal {
 		return this.user;
 	}
 
-	public String getPasscode() {
-		return this.passcode;
+	public String getPass() {
+		return this.pass;
 	}
 	
 	public ArrayList<Alert> getAlerts() {

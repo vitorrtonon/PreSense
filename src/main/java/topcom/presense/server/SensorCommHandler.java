@@ -33,7 +33,7 @@ public class SensorCommHandler {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
-        if (s == null) return new Auth("", "", "Invalid PIN"); // Invalid access
+        if (s == null) return new Auth("", ""); // Invalid access
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
@@ -43,7 +43,7 @@ public class SensorCommHandler {
         s.setPin(-1);
         dS.update(s);
         // Answer to sensor
-        return new Auth(s.getName(), passcode, "Valid PIN");
+        return new Auth(s.getName(), passcode);
     }
 
      /**
@@ -54,47 +54,42 @@ public class SensorCommHandler {
     @Consumes(MediaType.APPLICATION_JSON)    
     @Produces(MediaType.TEXT_PLAIN)    
     @Path("alert")
-    public String signalComm(ArrayList<Signal> recv) {
+    public String signalComm(Signal recv) {
         
         // For test purpose
         String ret = "";
-
-        for (Signal sign : recv) {
-            ret += "User = " + sign.getUser() + " Passcode = " + sign.getPasscode();
-            ret += "\n Um sensor será buscado por essas credenciais, pelo " +
-            "qual se recuperará o evento\nInicia-se a leitura de alertas:\n";
-            // Get json subobjects (alert list)
-            ArrayList<Alert> evAlerts = new ArrayList<>(sign.getAlerts());
-            for (Alert al : evAlerts) { // For each one...
-                ret += "Beacon ID = " + al.getMinor() + al.getMajor() 
-                        + al.getUuid();
-                ret += "Timestamp = " + al.getTime();
-                ret += "Signal kind = " + al.getKind();
-            }
-        }
-
+        ret += "User = " + recv.getUser() + " Passcode = " + recv.getPass();
+        ret += "\n Um sensor será buscado por essas credenciais, pelo " +
+        "qual se recuperará o evento\nInicia-se a leitura de alertas:\n";
+        // Get json subobjects (alert list)
+        ArrayList<Alert> evAlerts = new ArrayList<>(recv.getAlerts());
+        for (Alert al : evAlerts) { // For each one...
+            ret += "Beacon ID = " + al.getMinor() + al.getMajor() 
+                    + al.getUuid();
+            ret += "Timestamp = " + al.getTime();
+            ret += "Signal kind = " + al.getKind();
+        }    
+    
         return ret;
         /*
-        for (Signal sign : recv) {
-            // Retrieve event using sensor's search
-            EventDAO dEv = new EventDAO();
-            Event ev = dEV.findEventById(1);
-            SensorDAO dSens = new SensorDAO();
-            //Event ev = dSens.findSensorByNameAndPass(sign.getUser(), 
-            //                                  sign.getPass()).getEvent();
-            if (ev == null) {
-                System.err.println("Unregistered event");
-                return "not ok";
-            }
-            // Get json subobjects (alert list)
-            ArrayList<Alert> evAlerts = new ArrayList<>(sign.getAlerts());
-            for (Alert al : evAlerts) { // For each one...
-                if (!alertHandling(al, ev))  // Call handler
-                    System.err.println("Error in json alert.");
-            }
+        // Retrieve event using sensor's search
+        EventDAO dEv = new EventDAO();
+        Event ev = dEV.findEventById(1);
+        SensorDAO dSens = new SensorDAO();
+        //Event ev = dSens.findSensorByNameAndPass(recv.getUser(), 
+        //                                  recv.getPass()).getEvent();
+        if (ev == null) {
+            System.err.println("Unregistered event");
+            return "not ok";
         }
-
-        return "ok";*/
+        // Get json subobjects (alert list)
+        ArrayList<Alert> evAlerts = new ArrayList<>(recv.getAlerts());
+        for (Alert al : evAlerts) { // For each one...
+            if (!alertHandling(al, ev))  // Call handler
+                System.err.println("Error in json alert.");
+        }    
+        return "ok";
+        */
     }
 
     public boolean alertHandling(Alert recv, Event ev) {

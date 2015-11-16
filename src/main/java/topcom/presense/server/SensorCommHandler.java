@@ -29,21 +29,26 @@ public class SensorCommHandler {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("auth")
-    public Auth authComm( @QueryParam("PIN") int pin) {
+    public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
-        if (s == null) return new Auth("", ""); // Invalid access
+        if (s == null) 
+            return Response.notAcceptable(null).build(); // Invalid access
+        
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
         String encPass = p.encryptPass(passcode);
+        
         // Update sql ("consumes" PIN)
         s.setPasscode(encPass);
         s.setPin(-1);
         dS.update(s);
+        
         // Answer to sensor
-        return new Auth(s.getName(), passcode);
+        return Response.ok(new Auth(s.getName(), passcode), 
+                                            MediaType.APPLICATION_JSON).build();
     }
 
      /**
@@ -54,42 +59,25 @@ public class SensorCommHandler {
     @Consumes(MediaType.APPLICATION_JSON)    
     @Produces(MediaType.TEXT_PLAIN)    
     @Path("alert")
-    public String signalComm(Signal recv) {
-        
-        // For test purpose
-        String ret = "";
-        ret += "User = " + recv.getUser() + " Passcode = " + recv.getPass();
-        ret += "\n Um sensor será buscado por essas credenciais, pelo " +
-        "qual se recuperará o evento\nInicia-se a leitura de alertas:\n";
-        // Get json subobjects (alert list)
-        ArrayList<Alert> evAlerts = new ArrayList<>(recv.getAlerts());
-        for (Alert al : evAlerts) { // For each one...
-            ret += "Beacon ID = " + al.getMinor() + al.getMajor() 
-                    + al.getUuid();
-            ret += "Timestamp = " + al.getTime();
-            ret += "Signal kind = " + al.getKind();
-        }    
-    
-        return ret;
-        /*
+    public Response signalComm(Signal recv) {
         // Retrieve event using sensor's search
         EventDAO dEv = new EventDAO();
-        Event ev = dEV.findEventById(1);
         SensorDAO dSens = new SensorDAO();
-        //Event ev = dSens.findSensorByNameAndPass(recv.getUser(), 
-        //                                  recv.getPass()).getEvent();
+        PassCode p = new PassCode();
+        Event ev = dSens.findSensorByNameAndPass(recv.getUser(), 
+                                      p.encryptPass(recv.getPass())).getEvent();
         if (ev == null) {
             System.err.println("Unregistered event");
-            return "not ok";
+            return Response.notAcceptable(null).build();
         }
+        
         // Get json subobjects (alert list)
         ArrayList<Alert> evAlerts = new ArrayList<>(recv.getAlerts());
         for (Alert al : evAlerts) { // For each one...
             if (!alertHandling(al, ev))  // Call handler
                 System.err.println("Error in json alert.");
         }    
-        return "ok";
-        */
+        return Response.ok().build();
     }
 
     public boolean alertHandling(Alert recv, Event ev) {
@@ -115,7 +103,8 @@ public class SensorCommHandler {
                 
         // Search for Attendance, if doesn't exist, creat it
         AttendanceDAO dAtt = new AttendanceDAO();
-        Attendance att = dAtt.findAttendanceByEventAndPerson(ev.getId(), p.getId());
+        Attendance att = dAtt.findAttendanceByEventAndPerson(ev.getId(), 
+                                                             p.getId());
         if (att == null) att = new Attendance(ev, p, new Timestamp(0), curTime);
         else {
             // Process rightful kind of signal

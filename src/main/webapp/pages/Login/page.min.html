@@ -1,0 +1,358 @@
+<style id="Login.css">
+
+</style>
+<script id="Login.js">
+Application.$controller("LoginPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+
+
+Application.$controller("login2Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("login1Controller", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+</script>
+<script id="Login.variables.json">
+var _LoginPage_Variables_ ={
+	"Dfp1548n5sephlManagerData": {
+		"name": "Dfp1548n5sephlManagerData",
+		"type": "Manager",
+		"isList": true,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": true,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dfp1548n5sephl",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"_id": "wm-Dfp1548n5sephlManagerData-wm.LiveVariable-1446080037585",
+		"package": "com.presense.dfp1548n5sephl.Manager",
+		"tableName": "manager",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "username",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "username",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "password",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "password",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "role",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "role",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 10,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "admin"
+				}
+			],
+			"primaryKeys": [
+				"username"
+			],
+			"entityName": "Manager",
+			"fullyQualifiedName": "com.presense.dfp1548n5sephl.Manager",
+			"tableType": "TABLE"
+		},
+		"bindCount": 2
+	},
+	"loginVariable": {
+		"name": "loginVariable",
+		"type": "string",
+		"owner": "Page",
+		"dataSet": {
+			"username": "",
+			"password": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "username",
+						"type": "string",
+						"value": "bind:Widgets.login_username_text.datavalue"
+					},
+					{
+						"name": "password",
+						"type": "string",
+						"value": "bind:Widgets.login_password_text.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onError": "Javascript",
+		"useDefaultSuccessHandler": true,
+		"category": "wm.LoginVariable",
+		"_id": "wm-loginVariable-wm.LoginVariable-1445996238604"
+	},
+	"insert_event_var": {
+		"name": "insert_event_var",
+		"type": "Event",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "event",
+				"fields": [
+					{
+						"name": "eventId",
+						"type": "long",
+						"value": "bind:Widgets.create_event_id_text.datavalue"
+					},
+					{
+						"name": "name",
+						"type": "string",
+						"value": "bind:Widgets.create_event_name_text.datavalue"
+					},
+					{
+						"name": "startdate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_start_date.datavalue"
+					},
+					{
+						"name": "enddate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_end_date.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 1,
+		"designMaxResults": 10,
+		"operation": "insert",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "notificationVariable1",
+		"liveSource": "dfp1548n5sephl",
+		"ignoreCase": false,
+		"matchMode": "exact",
+		"filterFields": {},
+		"inputFields": {},
+		"category": "wm.LiveVariable",
+		"_id": "wm-insert_event_var-wm.LiveVariable-1446260804173",
+		"package": "com.presense.presense.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.presense.Event",
+			"tableType": "TABLE"
+		}
+	},
+	"notVar_insert": {
+		"name": "notVar_insert",
+		"owner": "Page",
+		"operation": "alert",
+		"dataBinding": {
+			"text": "INSERIDO!",
+			"okButtonText": "OK",
+			"alerttype": "success"
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-notVar_insert-wm.NotificationVariable-1446262465016"
+	}
+}
+</script>
+<script id="Login.html" type="text/ng-template">
+<wm-page name="page1" data-ng-controller="LoginPageController">
+    <wm-header name="header1" content="header"></wm-header>
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel name="left_panel1" columnwidth="2" content="leftnav"></wm-left-panel>
+        <wm-page-content name="page_content1" columnwidth="10">
+            <wm-tile class="login-tile" width="100%" height="100%" name="login_tile">
+                <wm-form on-submit="loginVariable" margintop="100" marginleft="240" horizontalalign="center" method="post" width="600px" name="login_form" title="Login" class="panel-default">
+                    <wm-layoutgrid name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn name="gridcolumn1">
+                                <wm-composite name="composite1">
+                                    <wm-label fontweight="bold" fontfamily="Courier New" fontsize="20" name="login_username_label" class="col-md-3" caption="Usuário"></wm-label>
+                                    <wm-container name="container1" class="col-md-9">
+                                        <wm-text class="login-username-text" margintop="9" fontfamily="Courier New" fontsize="20" required="true" name="login_username_text" tabindex="1" placeholder="Username"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn name="gridcolumn2">
+                                <wm-composite name="composite2">
+                                    <wm-label fontweight="bold" fontfamily="Courier New" fontsize="20" name="login_password_label" class="col-md-3" caption="Senha"></wm-label>
+                                    <wm-container name="container2" class="col-md-9">
+                                        <wm-text type="password" name="login_password_text" class="login-password-text" margintop="9" fontfamily="Courier New" fontsize="20" required="true" tabindex="1" placeholder="Password"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-buttongroup name="buttongroup1" horizontalalign="right" class="form-action col-md-12">
+                        <wm-button width="100%" margintop="25" fontweight="bold" fontfamily="Courier New" fontsize="20" iconclass="glyphicon glyphicon-log-in fa-lg" name="login_submit_button" caption="Entrar" type="submit" class="btn-primary"></wm-button>
+                    </wm-buttongroup>
+                </wm-form>
+            </wm-tile>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+</wm-page>
+</script>

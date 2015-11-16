@@ -1,0 +1,11 @@
+<wm-partial data-ng-controller="leftnavPageController" name="leftnav" type="left-panel">
+    <wm-nav name="leftnavigation" type="pills" layout="stacked">
+        <wm-nav-item name="home-menu-main">
+            <wm-anchor on-click="navigationCall_show_main" show="true" caption="Principal" name="main_button" iconclass="glyphicon glyphicon-star" class="main-button"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="home-menu-about">
+            <wm-anchor on-click="navigationCall_show_about" show="true" caption="Quem somos" name="about_button" iconclass="glyphicon glyphicon-info-sign" class="about-button"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="home-menu-contact"></wm-nav-item>
+    </wm-nav>
+</wm-partial>

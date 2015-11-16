@@ -1,0 +1,19 @@
+<wm-partial data-ng-controller="topnavPageController" name="topnav" type="top-nav">
+    <wm-navbar name="navbar1">
+        <wm-nav name="leftTopLinks" type="navbar" class="navbar-left">
+            <wm-nav-item name="list_home"></wm-nav-item>
+            <wm-nav-item name="list_services"></wm-nav-item>
+            <wm-nav-item name="nav_item5"></wm-nav-item>
+            <wm-nav-item name="nav_item6">
+                <wm-anchor on-click="navigationCall_show_main_leftnav" name="home_button" class="home-button" caption="Home" iconclass="glyphicon glyphicon-home"></wm-anchor>
+            </wm-nav-item>
+            <wm-nav-item name="nav_item7"></wm-nav-item>
+        </wm-nav>
+        <wm-nav name="rightTopLinks" type="navbar" class="navbar-right">
+            <wm-nav-item name="list_home"></wm-nav-item>
+            <wm-nav-item name="list_services">
+                <wm-anchor class="login-button" caption="Login" name="login_button" iconclass="glyphicon glyphicon-log-in" on-click="goToPage_Login"></wm-anchor>
+            </wm-nav-item>
+        </wm-nav>
+    </wm-navbar>
+</wm-partial>

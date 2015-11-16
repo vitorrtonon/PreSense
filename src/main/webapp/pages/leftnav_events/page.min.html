@@ -1,0 +1,83 @@
+<style id="leftnav_events.css">
+
+</style>
+<script id="leftnav_events.js">
+Application.$controller("leftnav_eventsPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+</script>
+<script id="leftnav_events.variables.json">
+var _leftnav_eventsPage_Variables_ ={
+	"navCall_show_events_create": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_create",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navCall_show_events_create-wm.NavigationVariable-1446249759463",
+		"name": "navCall_show_events_create"
+	},
+	"navCall_show_events_view": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_view",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navCall_show_events_view-wm.NavigationVariable-1446249787344",
+		"name": "navCall_show_events_view"
+	},
+	"navCall_show_events_remove": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_remove",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navCall_show_events_remove-wm.NavigationVariable-1446249810569"
+	}
+}
+</script>
+<script id="leftnav_events.html" type="text/ng-template">
+<wm-partial name="partial1" data-ng-controller="leftnav_eventsPageController" type="leftnav">
+    <wm-nav name="nav1" type="pills" layout="stacked">
+        <wm-nav-item name="nav_item1">
+            <wm-anchor name="events_create_button" on-click="navCall_show_events_create" show="true" caption="Cadastrar" iconclass="glyphicon glyphicon-plus" class="events-create-button"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item2">
+            <wm-anchor name="events_view_button" on-click="navCall_show_events_view" show="true" caption="Visualizar" iconclass="glyphicon glyphicon-eye-open" class="events-view-button"></wm-anchor>
+        </wm-nav-item>
+        <wm-nav-item name="nav_item4">
+            <wm-anchor name="events_remove_button" on-click="navCall_show_events_remove" show="true" caption="Remover" iconclass="glyphicon glyphicon-trash" class="events-remove-button"></wm-anchor>
+        </wm-nav-item>
+    </wm-nav>
+</wm-partial>
+</script>

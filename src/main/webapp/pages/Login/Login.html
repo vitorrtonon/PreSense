@@ -1,0 +1,39 @@
+<wm-page name="page1" data-ng-controller="LoginPageController">
+    <wm-header name="header1" content="header"></wm-header>
+    <wm-top-nav name="top_nav1" content="topnav"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel name="left_panel1" columnwidth="2" content="leftnav"></wm-left-panel>
+        <wm-page-content name="page_content1" columnwidth="10">
+            <wm-tile class="login-tile" width="100%" height="100%" name="login_tile">
+                <wm-form on-submit="loginVariable" margintop="100" marginleft="240" horizontalalign="center" method="post" width="600px" name="login_form" title="Login" class="panel-default">
+                    <wm-layoutgrid name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn name="gridcolumn1">
+                                <wm-composite name="composite1">
+                                    <wm-label fontweight="bold" fontfamily="Courier New" fontsize="20" name="login_username_label" class="col-md-3" caption="Usuário"></wm-label>
+                                    <wm-container name="container1" class="col-md-9">
+                                        <wm-text class="login-username-text" margintop="9" fontfamily="Courier New" fontsize="20" required="true" name="login_username_text" tabindex="1" placeholder="Username"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn name="gridcolumn2">
+                                <wm-composite name="composite2">
+                                    <wm-label fontweight="bold" fontfamily="Courier New" fontsize="20" name="login_password_label" class="col-md-3" caption="Senha"></wm-label>
+                                    <wm-container name="container2" class="col-md-9">
+                                        <wm-text type="password" name="login_password_text" class="login-password-text" margintop="9" fontfamily="Courier New" fontsize="20" required="true" tabindex="1" placeholder="Password"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-buttongroup name="buttongroup1" horizontalalign="right" class="form-action col-md-12">
+                        <wm-button width="100%" margintop="25" fontweight="bold" fontfamily="Courier New" fontsize="20" iconclass="glyphicon glyphicon-log-in fa-lg" name="login_submit_button" caption="Entrar" type="submit" class="btn-primary"></wm-button>
+                    </wm-buttongroup>
+                </wm-form>
+            </wm-tile>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+</wm-page>

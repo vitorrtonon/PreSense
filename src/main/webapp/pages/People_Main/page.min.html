@@ -1,0 +1,40 @@
+<style id="People_Main.css">
+
+</style>
+<script id="People_Main.js">
+Application.$controller("People_MainPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+</script>
+<script id="People_Main.variables.json">
+var _People_MainPage_Variables_ ={};
+</script>
+<script id="People_Main.html" type="text/ng-template">
+<wm-page name="page1" data-ng-controller="People_MainPageController">
+    <wm-header name="header1" content="header"></wm-header>
+    <wm-top-nav name="top_nav1" content="topnav_logged"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel name="left_panel1" columnwidth="2" content="leftnav"></wm-left-panel>
+        <wm-page-content name="page_content1" columnwidth="10"></wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+</wm-page>
+</script>

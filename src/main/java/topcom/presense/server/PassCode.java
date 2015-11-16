@@ -1,5 +1,9 @@
 package topcom.presense.server;
 
+ 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.Random;
 
 public class PassCode {
@@ -27,8 +31,37 @@ public class PassCode {
         return new String(buffer);
     }
 
+    /* Encryption function credited to http://howtodoinjava.com/ */
     public String encryptPass(String passcode) {
-        /* TO-DO */
-        return passcode;
+        
+        String encPass = null;
+        try {
+            String salt = this.getSalt();
+            MessageDigest md = MessageDigest.getInstance("SHA-512");
+            md.update(salt.getBytes());
+            byte[] bytes = md.digest(passcode.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < bytes.length ; i++) { 
+                sb.append(Integer.toString((bytes[i] & 0xff) 
+                                                     + 0x100, 16).substring(1));
+            } 
+            encPass = sb.toString();
+        }
+        catch (NoSuchAlgorithmException e) {
+            System.err.println("Encryptation error: ");
+            e.printStackTrace();
+        }
+        return encPass;
+    }
+
+    private static String getSalt() throws NoSuchAlgorithmException {
+        //Always use a SecureRandom generator
+        SecureRandom sr = SecureRandom.getInstance("SHA1PRNG");
+        //Create array for salt
+        byte[] salt = new byte[16];
+        //Get a random salt
+        sr.nextBytes(salt);
+        //return salt
+        return salt.toString();
     }
 }

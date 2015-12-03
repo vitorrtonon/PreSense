@@ -9,9 +9,9 @@
 
 		<id name="id" column="sensor_id" type="long" />
 
-		<id name="pin" column="pin" type="int" unique="true"/>
+		<property name="pin" column="pin" type="int" unique="true"/>
 
-		<id name="passcode" column="passcode" type="string" />
+		<property name="passcode" column="passcode" type="string" />
 
 		<property name="name" column="name" type="string" />
 

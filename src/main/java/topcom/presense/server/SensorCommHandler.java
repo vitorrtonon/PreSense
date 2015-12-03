@@ -65,8 +65,16 @@ public class SensorCommHandler {
         EventDAO dEv = new EventDAO();
         SensorDAO dSens = new SensorDAO();
         PassCode p = new PassCode();
-        Sensor s = dSens.findSensorByNameAndPass(recv.getUser(),
-                                      recv.getPass());
+        //Sensor s = dSens.findSensorByNameAndPass(recv.getUser(),
+         //                             recv.getPass());
+        List<Sensor> se = dSens.findAllSensors();
+        Sensor s = null;
+        for (Sensor it : se) {
+            if (it.getName().equalsIgnoreCase(recv.getUser()) && it.getPasscode().equals(recv.getPass())) {
+                s = it;
+                break;
+            }
+        }
         if (s == null) {
             System.err.println("Unregistered sensor");
             return Response.status(403).type("text/plain")

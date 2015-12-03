@@ -33,10 +33,8 @@ public class SensorCommHandler {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
-        String pass = "PIN= " + pin;
         if (s == null) 
-            return Response.ok(new Auth("teste", pass), 
-                                            MediaType.APPLICATION_JSON).build(); // Invalid access
+            return Response.notAcceptable(null).build(); // Invalid access
         
         // Create simple random password and encrypt it
         PassCode p = new PassCode();

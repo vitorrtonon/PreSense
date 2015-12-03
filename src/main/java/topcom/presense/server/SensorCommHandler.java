@@ -33,8 +33,17 @@ public class SensorCommHandler {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
+        /*List<Sensor> se = dS.findAllSensors();
+        Sensor s = null;
+        for (Sensor it : se) {
+            if (it.getPin() == pin) {
+                s = it;
+            }
+        }*/
+
         if (s == null) 
-            return Response.notAcceptable(null).build(); // Invalid access
+            return Response.status(403).type("text/plain")
+                .entity("PIN not found\n").build();  // Invalid access
         
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
@@ -64,11 +73,28 @@ public class SensorCommHandler {
         EventDAO dEv = new EventDAO();
         SensorDAO dSens = new SensorDAO();
         PassCode p = new PassCode();
-        Event ev = dSens.findSensorByNameAndPass(recv.getUser(), 
-                                      p.encryptPass(recv.getPass())).getEvent();
+        Sensor s = dSens.findSensorByNameAndPass(recv.getUser(),
+                                     recv.getPass());
+                                     //p.encryptPass(recv.getPass()));
+        /*List<Sensor> se = dSens.findAllSensors();
+        Sensor s = null;
+        for (Sensor it : se) {
+            if (it.getName().equalsIgnoreCase(recv.getUser()) && it.getPasscode().equals(recv.getPass())) {
+                s = it;
+                break;
+            }
+        }*/
+        if (s == null) {
+            System.err.println("Unregistered sensor\n");
+            return Response.status(403).type("text/plain")
+                .entity("Sensor " + recv.getUser() + " " + 
+                                      recv.getPass() + "not found\n").build();
+        }
+        Event ev = s.getEvent();
         if (ev == null) {
-            System.err.println("Unregistered event");
-            return Response.notAcceptable(null).build();
+            System.err.println("Unregistered event\n");
+            return Response.status(403).type("text/plain")
+                .entity("No associated event!\n").build();
         }
         
         // Get json subobjects (alert list)

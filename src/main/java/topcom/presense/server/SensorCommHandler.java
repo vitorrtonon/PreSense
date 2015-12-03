@@ -43,7 +43,7 @@ public class SensorCommHandler {
 
         if (s == null) 
             return Response.status(403).type("text/plain")
-                .entity("PIN não encontrado").build();  // Invalid access
+                .entity("PIN not found\n").build();  // Invalid access
         
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
@@ -85,16 +85,16 @@ public class SensorCommHandler {
             }
         }*/
         if (s == null) {
-            System.err.println("Unregistered sensor");
+            System.err.println("Unregistered sensor\n");
             return Response.status(403).type("text/plain")
                 .entity("Sensor " + recv.getUser() + " " + 
-                                      recv.getPass() + "não registrado").build();
+                                      recv.getPass() + "not found\n").build();
         }
         Event ev = s.getEvent();
         if (ev == null) {
-            System.err.println("Unregistered event");
+            System.err.println("Unregistered event\n");
             return Response.status(403).type("text/plain")
-                .entity("Nenhum evento associado!").build();
+                .entity("No associated event!\n").build();
         }
         
         // Get json subobjects (alert list)

@@ -8,7 +8,7 @@ public class Manager {
 	private String username;
 	private String password;
 	private String role;
-	private List<Event> events;
+	private Set<Event> events;
 
 	public Manager() {}
 
@@ -22,7 +22,7 @@ public class Manager {
 	}
 
 	public Manager(String name, String username, 
-				String password, List<Event> events) {
+				String password, Set<Event> events) {
 
 		this.setName(name);
 		this.setUsername(username);
@@ -62,14 +62,14 @@ public class Manager {
 		return this.role;
 	}
 
-	public void setEvents(List<Event> events) {
+	public void setEvents(Set<Event> events) {
 		
-		if(events == null) events = new ArrayList<Event>();
+		if(events == null) events = new HashSet<Event>();
 
 		this.events = events;
 	}
 
-	public List<Event> getEvents() {
+	public Set<Event> getEvents() {
 		return this.events;
 	}
 }

@@ -9,8 +9,8 @@ public class Event {
 	private String name;
 	private Timestamp startDate;
 	private Timestamp endDate;
-	private List<Person> participants;
-	private List<Manager> managers;
+	private Set<Person> participants;
+	private Set<Manager> managers;
 	private List<Sensor> sensors;
 
 	public Event() {}
@@ -28,8 +28,8 @@ public class Event {
 	}
 
 	public Event(long id, String name, Timestamp startDate, 
-				Timestamp endDate, List<Person> participants, 
-				List<Manager> managers, List<Sensor> sensors) {
+				Timestamp endDate, Set<Person> participants, 
+				Set<Manager> managers, List<Sensor> sensors) {
 
 		this.setId(id);
 		this.setName(name);
@@ -72,25 +72,25 @@ public class Event {
 		return this.endDate;
 	}
 
-	public void setParticipants(List<Person> participants) {
+	public void setParticipants(Set<Person> participants) {
 	
-		if(participants == null) participants = new ArrayList<Person>();
+		if(participants == null) participants = new HashSet<Person>();
 
 		this.participants = participants;
 	}
 
-	public List<Person> getParticipants() {
+	public Set<Person> getParticipants() {
 		return this.participants;
 	}
 
-	public void setManagers(List<Manager> managers) {
+	public void setManagers(Set<Manager> managers) {
 	
-		if(managers == null) managers = new ArrayList<Manager>();
+		if(managers == null) managers = new HashSet<Manager>();
 
 		this.managers = managers;
 	}
 
-	public List<Manager> getManagers() {
+	public Set<Manager> getManagers() {
 		return this.managers;
 	}
 

@@ -6,7 +6,7 @@ public class Person {
 
 	private long id;
 	private String name;
-	private List<Event> events;
+	private Set<Event> events;
 	private List<Beacon> beacons;
 	private List<Attendance> attendances;
 
@@ -21,7 +21,7 @@ public class Person {
 		this.setAttendances(null);
 	}
 
-	public Person(long id, String name, List<Event> events, 
+	public Person(long id, String name, Set<Event> events, 
 			List<Beacon> beacons, List<Attendance> attendances) {
 
 		this.setId(id);
@@ -47,14 +47,14 @@ public class Person {
 		return this.name;
 	}
 
-	public void setEvents(List<Event> events) {
+	public void setEvents(Set<Event> events) {
 
-		if(events == null) events = new ArrayList<Event>();
+		if(events == null) events = new HashSet<Event>();
 
 		this.events = events;
 	}
 
-	public List<Event> getEvents() {
+	public Set<Event> getEvents() {
 		return this.events;
 	}
 

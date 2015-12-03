@@ -7,18 +7,20 @@
 
     <class name="Manager" table="Manager">
 
-		<id name="username" column="username" type="string" />
+		<id name="username" column="manager_id" type="string" />
 
 		<property name="name" column="name" type="string" />
 
 		<property name="password" column="password" type="string" />
 
-		<property name="role" column="role" type="string" default="admin"/>
+		<property name="role" type="string">
+			<column name="role" not-null="true" default="'admin'"/>
+		</property>
 
-		<bag name="events" table="EventManager" inverse="true" lazy="false">
+		<set name="events" table="EventManager" inverse="true" lazy="false">
 			<key column="manager_id" not-null="true"/>
 			<many-to-many column="event_id" class="Event"/>
-		</bag>
+		</set>
     </class>
 
 </hibernate-mapping>

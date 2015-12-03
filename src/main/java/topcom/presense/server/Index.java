@@ -10,7 +10,7 @@ import org.glassfish.jersey.server.mvc.Viewable;
 /**
  * Root resource (exposed at "/" path)
  */
-@Path("/")
+@Path("index")
 public class Index {
 
     /**

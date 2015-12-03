@@ -34,7 +34,8 @@ public class SensorCommHandler {
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
         if (s == null) 
-            return Response.notAcceptable(null).build(); // Invalid access
+            return Response.status(403).type("text/plain")
+                .entity("PIN não encontrado").build();  // Invalid access
         
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
@@ -68,12 +69,14 @@ public class SensorCommHandler {
                                       p.encryptPass(recv.getPass()));
         if (s == null) {
             System.err.println("Unregistered sensor");
-            return Response.notAcceptable(null).build();
+            return Response.status(403).type("text/plain")
+                .entity("Sensor não registrado").build();
         }
         Event ev = s.getEvent();
         if (ev == null) {
             System.err.println("Unregistered event");
-            return Response.notAcceptable(null).build();
+            return Response.status(403).type("text/plain")
+                .entity("Nenhum evento associado!").build();
         }
         
         // Get json subobjects (alert list)

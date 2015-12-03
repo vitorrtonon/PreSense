@@ -74,7 +74,8 @@ public class SensorCommHandler {
         SensorDAO dSens = new SensorDAO();
         PassCode p = new PassCode();
         Sensor s = dSens.findSensorByNameAndPass(recv.getUser(),
-                                     p.encryptPass(recv.getPass()));
+                                     recv.getPass());
+                                     //p.encryptPass(recv.getPass()));
         /*List<Sensor> se = dSens.findAllSensors();
         Sensor s = null;
         for (Sensor it : se) {

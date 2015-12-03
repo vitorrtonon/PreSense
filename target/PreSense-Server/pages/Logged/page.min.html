@@ -1,0 +1,42 @@
+<style id="Logged.css">
+
+</style>
+<script id="Logged.js">
+Application.$controller("LoggedPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+</script>
+<script id="Logged.variables.json">
+var _LoggedPage_Variables_ ={};
+</script>
+<script id="Logged.html" type="text/ng-template">
+<wm-page name="page1" data-ng-controller="LoggedPageController">
+    <wm-header name="header1" content="header"></wm-header>
+    <wm-top-nav name="top_nav1" content="topnav_logged"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel animation="slide-in" cursor="default" class="left-menu-home" name="left_menu_home" columnwidth="2" content="leftnav"></wm-left-panel>
+        <wm-page-content name="page_content1" columnwidth="10">
+            <wm-view viewgroup="logged" name="view_logged_main"></wm-view>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+</wm-page>
+</script>

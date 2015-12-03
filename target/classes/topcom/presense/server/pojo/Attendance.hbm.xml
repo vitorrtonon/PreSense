@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="topcom.presense.server.pojo">
+
+    <class name="Attendance" table="Attendance">
+
+		<id name="id" column="attendance_id" type="long">
+			<generator class="native"/>
+		</id>
+
+		<property name="lastTime" column="lastTime" type="timestamp" />
+
+		<property name="totalTime" column="totalTime" type="timestamp" />
+
+		<properties name="AttendanceKey" unique="true">
+			<many-to-one name="event" column="attendances_event" class="Event" not-null="true" lazy="false" />
+			<many-to-one name="person" column="attendances_person" class="Person" not-null="true" lazy="false" />
+		</properties>
+    </class>
+
+</hibernate-mapping>

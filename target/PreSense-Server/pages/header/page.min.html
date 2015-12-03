@@ -1,0 +1,53 @@
+<style id="header.css">
+
+</style>
+<script id="header.js">
+Application.$controller("headerPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action on the variables within this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
+         * $scope.Variables.loggedInUser.getData()
+         */
+    };
+
+    /* perform any action on widgets within this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. to get value of text widget named 'username' use following script
+         * '$scope.Widgets.username.datavalue'
+         */
+    };
+
+}]);
+</script>
+<script id="header.variables.json">
+var _headerPage_Variables_ ={};
+</script>
+<script id="header.html" type="text/ng-template">
+<wm-partial data-ng-controller="headerPageController" name="header" type="header">
+    <wm-layoutgrid name="layoutgrid1">
+        <wm-gridrow name="gridrow2">
+            <wm-gridcolumn columnwidth="1" name="gridcolumn7_1">
+                <wm-picture name="app_image" picturesource="resources/images/imagelists/wifi-icon.png" height="128" width="128" class="app-image" marginunit="px" opacity="1" paddingunit="%" marginleft="5"></wm-picture>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="1" name="gridcolumn4" height="128px">
+                <wm-label name="app_title" caption="PreSense" class="app-title" fontsize="55" fontfamily="Courier New" fontweight="bold" color="#3295c2" paddingunit="%" marginunit="px" marginleft="45" opacity="1" margintop="20"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn columnwidth="4" name="gridcolumn8_1">
+                <wm-label name="app_subtitle" caption="Dê um sinal!" class="app-subtitle" fontsize="15" fontfamily="Courier New" color="#287aa1" fontweight="bold" paddingunit="%" marginunit="px" opacity="0.7" margintop="80" marginleft="120"></wm-label>
+            </wm-gridcolumn>
+            <wm-gridcolumn opacity="1" name="gridcolumn4_1" columnwidth="4"></wm-gridcolumn>
+            <wm-gridcolumn paddingtop="10" name="gridcolumn5" columnwidth="2">
+                <wm-picture marginright="5" marginleft="40" picturesource="resources/images/imagelists/facebook-logo.png" name="picture2"></wm-picture>
+                <wm-picture marginright="5" marginleft="5" picturesource="resources/images/imagelists/google_plus.png" name="picture4"></wm-picture>
+                <wm-picture marginright="5" marginleft="5" picturesource="resources/images/imagelists/twitter_logo.png" name="picture3"></wm-picture>
+            </wm-gridcolumn>
+        </wm-gridrow>
+    </wm-layoutgrid>
+</wm-partial>
+</script>

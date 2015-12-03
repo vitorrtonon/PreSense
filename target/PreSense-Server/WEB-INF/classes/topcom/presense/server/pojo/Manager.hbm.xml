@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="topcom.presense.server.pojo">
+
+    <class name="Manager" table="Manager">
+
+		<id name="username" column="username" type="string" />
+
+		<property name="name" column="name" type="string" />
+
+		<property name="password" column="password" type="string" />
+
+		<property name="role" column="role" type="string" default="admin"/>
+
+		<bag name="events" table="EventManager" inverse="true" lazy="false">
+			<key column="manager_id" not-null="true"/>
+			<many-to-many column="event_id" class="Event"/>
+		</bag>
+    </class>
+
+</hibernate-mapping>

@@ -1,0 +1,27 @@
+{
+	"navigationCall_show_main_leftnav": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Main",
+		"viewName": "view_home_leftnav",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navigationCall_show_main_leftnav-wm.NavigationVariable-1446245201393",
+		"name": "navigationCall_show_main_leftnav"
+	},
+	"navigationCall_show_main_main": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Main",
+		"viewName": "view_main_main",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navigationCall_show_main_main-wm.NavigationVariable-1446245330023"
+	}
+}

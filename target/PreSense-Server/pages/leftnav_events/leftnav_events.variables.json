@@ -1,0 +1,40 @@
+{
+	"navCall_show_events_create": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_create",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navCall_show_events_create-wm.NavigationVariable-1446249759463",
+		"name": "navCall_show_events_create"
+	},
+	"navCall_show_events_view": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_view",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navCall_show_events_view-wm.NavigationVariable-1446249787344",
+		"name": "navCall_show_events_view"
+	},
+	"navCall_show_events_remove": {
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_remove",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-navCall_show_events_remove-wm.NavigationVariable-1446249810569"
+	}
+}

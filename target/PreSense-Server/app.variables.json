@@ -1,0 +1,2581 @@
+{
+	"goToPage_Main": {
+		"name": "goToPage_Main",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Main",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_Main-wm.NavigationVariable1389180517517"
+	},
+	"supportedLocale": {
+		"name": "supportedLocale",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"en": "English"
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"type": "object",
+				"fields": [
+					{
+						"name": "dataValue",
+						"type": "string"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-supportedLocale-wm.Variable1402640443182"
+	},
+	"goToPage_About": {
+		"name": "goToPage_About",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "About",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_About-wm.NavigationVariable-1445902443694"
+	},
+	"goToPage_Login": {
+		"name": "goToPage_Login",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Login",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_Login-wm.NavigationVariable-1445906876061"
+	},
+	"goToPage_Logged": {
+		"name": "goToPage_Logged",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Logged",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_Logged-wm.NavigationVariable-1445915378314"
+	},
+	"goToPage_topnav_logged": {
+		"name": "goToPage_topnav_logged",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "topnav_logged",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_topnav_logged-wm.NavigationVariable-1445949356438"
+	},
+	"goToPage_leftnav_events": {
+		"name": "goToPage_leftnav_events",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "leftnav_events",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_leftnav_events-wm.NavigationVariable-1445950485572"
+	},
+	"goToPage_leftnav_empty": {
+		"name": "goToPage_leftnav_empty",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "leftnav_empty",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_leftnav_empty-wm.NavigationVariable-1445957915695"
+	},
+	"logoutVariable": {
+		"name": "logoutVariable",
+		"type": "string",
+		"owner": "App",
+		"saveInPhonegap": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"redirectTo": "index.html",
+		"useDefaultSuccessHandler": true,
+		"category": "wm.LogoutVariable",
+		"_id": "wm-logoutVariable-wm.LogoutVariable-1445996238604"
+	},
+	"loggedInUser": {
+		"name": "loggedInUser",
+		"type": "string",
+		"isList": false,
+		"owner": "App",
+		"dataSet": {
+			"name": "",
+			"id": "",
+			"tenantId": "",
+			"isAuthenticated": false,
+			"isSecurityEnabled": true,
+			"roles": []
+		},
+		"dataBinding": [
+			{
+				"name": "dataSet",
+				"fields": [
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "id",
+						"type": "string"
+					},
+					{
+						"name": "tenantId",
+						"type": "string"
+					},
+					{
+						"name": "isAuthenticated",
+						"type": "string"
+					},
+					{
+						"name": "isSecurityEnabled",
+						"type": "string"
+					},
+					{
+						"name": "roles",
+						"type": "string"
+					}
+				],
+				"type": "object",
+				"isList": false
+			}
+		],
+		"saveInPhonegap": false,
+		"category": "wm.Variable",
+		"_id": "wm-loggedInUser-wm.Variable-1445996238605"
+	},
+	"loginVariable": {
+		"name": "loginVariable",
+		"type": "string",
+		"owner": "App",
+		"dataSet": {
+			"username": "",
+			"password": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": [
+					{
+						"name": "username",
+						"type": "string",
+						"value": "bind:Variables.manager_var.dataSet.data[$i].username"
+					},
+					{
+						"name": "password",
+						"type": "string",
+						"value": "bind:Variables.manager_var.dataSet.data[$i].password"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onError": "Javascript",
+		"useDefaultSuccessHandler": false,
+		"category": "wm.LoginVariable",
+		"_id": "wm-loginVariable-wm.LoginVariable-1446227106737"
+	},
+	"goToPage_People_Main": {
+		"name": "goToPage_People_Main",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "People_Main",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_People_Main-wm.NavigationVariable-1446233006581"
+	},
+	"goToPage_Events": {
+		"name": "goToPage_Events",
+		"owner": "App",
+		"operation": "gotoPage",
+		"pageName": "Events",
+		"dataBinding": {},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-goToPage_Events-wm.NavigationVariable-1446253391046"
+	},
+	"attendance_var": {
+		"type": "Attendance",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-attendance_var-wm.LiveVariable-1447088502070",
+		"package": "com.presense.dadjf5a027tja9.Attendance",
+		"tableName": "attendance",
+		"tableType": "TABLE",
+		"properties": [
+			"event",
+			"person"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Attendance",
+				"watchOn": "Dadjf5a027tja9EventData"
+			},
+			{
+				"columnName": "person",
+				"relationName": "person",
+				"type": "Person",
+				"package": "com.presense.dadjf5a027tja9.Attendance",
+				"watchOn": "Dadjf5a027tja9PersonData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "attendanceId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "attendance_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "lasttime",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "lasttime",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "totaltime",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "totaltime",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "attendances_event",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				},
+				{
+					"fieldName": "person",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "attendances_person",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "person",
+					"relatedEntityName": "Person",
+					"columns": [
+						{
+							"fieldName": "personId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "person_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "person.personId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [
+				"attendanceId"
+			],
+			"entityName": "Attendance",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Attendance",
+			"tableType": "TABLE"
+		},
+		"name": "attendance_var"
+	},
+	"beacon_var": {
+		"type": "Beacon",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-beacon_var-wm.LiveVariable-1447088502074",
+		"package": "com.presense.dadjf5a027tja9.Beacon",
+		"tableName": "beacon",
+		"tableType": "TABLE",
+		"properties": [
+			"person"
+		],
+		"relatedTables": [
+			{
+				"columnName": "person",
+				"relationName": "person",
+				"type": "Person",
+				"package": "com.presense.dadjf5a027tja9.Beacon",
+				"watchOn": "Dadjf5a027tja9PersonData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "beaconId",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "beacon_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "person",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "person",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "person",
+					"relatedEntityName": "Person",
+					"columns": [
+						{
+							"fieldName": "personId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "person_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "person.personId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [
+				"beaconId"
+			],
+			"entityName": "Beacon",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Beacon",
+			"tableType": "TABLE"
+		},
+		"name": "beacon_var"
+	},
+	"event_var": {
+		"type": "Event",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-event_var-wm.LiveVariable-1447088502077",
+		"package": "com.presense.dadjf5a027tja9.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Event",
+			"tableType": "TABLE"
+		},
+		"name": "event_var"
+	},
+	"eventmanager_var": {
+		"type": "Eventmanager",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-eventmanager_var-wm.LiveVariable-1447088502080",
+		"package": "com.presense.dadjf5a027tja9.Eventmanager",
+		"tableName": "eventmanager",
+		"tableType": "TABLE",
+		"properties": [
+			"event",
+			"manager"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Eventmanager",
+				"watchOn": "Dadjf5a027tja9EventData"
+			},
+			{
+				"columnName": "manager",
+				"relationName": "manager",
+				"type": "Manager",
+				"package": "com.presense.dadjf5a027tja9.Eventmanager",
+				"watchOn": "Dadjf5a027tja9ManagerData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				},
+				{
+					"fieldName": "manager",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "manager_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "manager",
+					"relatedEntityName": "Manager",
+					"columns": [
+						{
+							"fieldName": "username",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "username",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "password",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "password",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "role",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "role",
+							"isPrimaryKey": false,
+							"notNull": true,
+							"length": 10,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": "admin"
+						}
+					],
+					"relatedFieldName": "manager.username",
+					"isList": false
+				}
+			],
+			"primaryKeys": [],
+			"entityName": "Eventmanager",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Eventmanager",
+			"tableType": "TABLE"
+		},
+		"name": "eventmanager_var"
+	},
+	"manager_var": {
+		"type": "Manager",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-manager_var-wm.LiveVariable-1447088502083",
+		"package": "com.presense.dadjf5a027tja9.Manager",
+		"tableName": "manager",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "username",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "username",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "password",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "password",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "role",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "role",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 10,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "admin"
+				}
+			],
+			"primaryKeys": [
+				"username"
+			],
+			"entityName": "Manager",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Manager",
+			"tableType": "TABLE"
+		},
+		"name": "manager_var"
+	},
+	"person_var": {
+		"type": "Person",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-person_var-wm.LiveVariable-1447088502086",
+		"package": "com.presense.dadjf5a027tja9.Person",
+		"tableName": "person",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "personId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "person_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"personId"
+			],
+			"entityName": "Person",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Person",
+			"tableType": "TABLE"
+		},
+		"name": "person_var"
+	},
+	"personevent_var": {
+		"type": "Personevent",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-personevent_var-wm.LiveVariable-1447088502090",
+		"package": "com.presense.dadjf5a027tja9.Personevent",
+		"tableName": "personevent",
+		"tableType": "TABLE",
+		"properties": [
+			"event",
+			"person"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Personevent",
+				"watchOn": "Dadjf5a027tja9EventData"
+			},
+			{
+				"columnName": "person",
+				"relationName": "person",
+				"type": "Person",
+				"package": "com.presense.dadjf5a027tja9.Personevent",
+				"watchOn": "Dadjf5a027tja9PersonData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				},
+				{
+					"fieldName": "person",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "person_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "person",
+					"relatedEntityName": "Person",
+					"columns": [
+						{
+							"fieldName": "personId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "person_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "person.personId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [],
+			"entityName": "Personevent",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Personevent",
+			"tableType": "TABLE"
+		},
+		"name": "personevent_var"
+	},
+	"sensor_var": {
+		"type": "Sensor",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-sensor_var-wm.LiveVariable-1447088502093",
+		"package": "com.presense.dadjf5a027tja9.Sensor",
+		"tableName": "sensor",
+		"tableType": "TABLE",
+		"properties": [
+			"event"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Sensor",
+				"watchOn": "Dadjf5a027tja9EventData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "sensorId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "sensor_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [
+				"sensorId"
+			],
+			"entityName": "Sensor",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Sensor",
+			"tableType": "TABLE"
+		},
+		"name": "sensor_var"
+	},
+	"Dadjf5a027tja9AttendanceData": {
+		"type": "Attendance",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9AttendanceData-wm.LiveVariable-1447088529474",
+		"package": "com.presense.dadjf5a027tja9.Attendance",
+		"tableName": "attendance",
+		"tableType": "TABLE",
+		"properties": [
+			"event",
+			"person"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Attendance",
+				"watchOn": "Dadjf5a027tja9EventData"
+			},
+			{
+				"columnName": "person",
+				"relationName": "person",
+				"type": "Person",
+				"package": "com.presense.dadjf5a027tja9.Attendance",
+				"watchOn": "Dadjf5a027tja9PersonData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "attendanceId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "attendance_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "lasttime",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "lasttime",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "totaltime",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "totaltime",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "attendances_event",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				},
+				{
+					"fieldName": "person",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "attendances_person",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "person",
+					"relatedEntityName": "Person",
+					"columns": [
+						{
+							"fieldName": "personId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "person_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "person.personId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [
+				"attendanceId"
+			],
+			"entityName": "Attendance",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Attendance",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9AttendanceData"
+	},
+	"Dadjf5a027tja9BeaconData": {
+		"type": "Beacon",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9BeaconData-wm.LiveVariable-1447088529476",
+		"package": "com.presense.dadjf5a027tja9.Beacon",
+		"tableName": "beacon",
+		"tableType": "TABLE",
+		"properties": [
+			"person"
+		],
+		"relatedTables": [
+			{
+				"columnName": "person",
+				"relationName": "person",
+				"type": "Person",
+				"package": "com.presense.dadjf5a027tja9.Beacon",
+				"watchOn": "Dadjf5a027tja9PersonData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "beaconId",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "beacon_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "person",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "person",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "person",
+					"relatedEntityName": "Person",
+					"columns": [
+						{
+							"fieldName": "personId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "person_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "person.personId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [
+				"beaconId"
+			],
+			"entityName": "Beacon",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Beacon",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9BeaconData"
+	},
+	"Dadjf5a027tja9EventData": {
+		"type": "Event",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9EventData-wm.LiveVariable-1447088529478",
+		"package": "com.presense.dadjf5a027tja9.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Event",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9EventData"
+	},
+	"Dadjf5a027tja9EventmanagerData": {
+		"type": "Eventmanager",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9EventmanagerData-wm.LiveVariable-1447088529480",
+		"package": "com.presense.dadjf5a027tja9.Eventmanager",
+		"tableName": "eventmanager",
+		"tableType": "TABLE",
+		"properties": [
+			"event",
+			"manager"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Eventmanager",
+				"watchOn": "Dadjf5a027tja9EventData"
+			},
+			{
+				"columnName": "manager",
+				"relationName": "manager",
+				"type": "Manager",
+				"package": "com.presense.dadjf5a027tja9.Eventmanager",
+				"watchOn": "Dadjf5a027tja9ManagerData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				},
+				{
+					"fieldName": "manager",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "manager_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "manager",
+					"relatedEntityName": "Manager",
+					"columns": [
+						{
+							"fieldName": "username",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "username",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "password",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "password",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "role",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "role",
+							"isPrimaryKey": false,
+							"notNull": true,
+							"length": 10,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": "admin"
+						}
+					],
+					"relatedFieldName": "manager.username",
+					"isList": false
+				}
+			],
+			"primaryKeys": [],
+			"entityName": "Eventmanager",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Eventmanager",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9EventmanagerData"
+	},
+	"Dadjf5a027tja9ManagerData": {
+		"type": "Manager",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9ManagerData-wm.LiveVariable-1447088529481",
+		"package": "com.presense.dadjf5a027tja9.Manager",
+		"tableName": "manager",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "username",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "username",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "password",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "password",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "role",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "role",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 10,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": "admin"
+				}
+			],
+			"primaryKeys": [
+				"username"
+			],
+			"entityName": "Manager",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Manager",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9ManagerData"
+	},
+	"Dadjf5a027tja9PersonData": {
+		"type": "Person",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9PersonData-wm.LiveVariable-1447088529482",
+		"package": "com.presense.dadjf5a027tja9.Person",
+		"tableName": "person",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "personId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "person_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				}
+			],
+			"primaryKeys": [
+				"personId"
+			],
+			"entityName": "Person",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Person",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9PersonData"
+	},
+	"Dadjf5a027tja9PersoneventData": {
+		"type": "Personevent",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9PersoneventData-wm.LiveVariable-1447088529483",
+		"package": "com.presense.dadjf5a027tja9.Personevent",
+		"tableName": "personevent",
+		"tableType": "TABLE",
+		"properties": [
+			"event",
+			"person"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Personevent",
+				"watchOn": "Dadjf5a027tja9EventData"
+			},
+			{
+				"columnName": "person",
+				"relationName": "person",
+				"type": "Person",
+				"package": "com.presense.dadjf5a027tja9.Personevent",
+				"watchOn": "Dadjf5a027tja9PersonData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				},
+				{
+					"fieldName": "person",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "person_id",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "person",
+					"relatedEntityName": "Person",
+					"columns": [
+						{
+							"fieldName": "personId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "person_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "person.personId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [],
+			"entityName": "Personevent",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Personevent",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9PersoneventData"
+	},
+	"Dadjf5a027tja9SensorData": {
+		"type": "Sensor",
+		"isList": true,
+		"owner": "App",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "object",
+				"fields": []
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": true,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "dadjf5a027tja9",
+		"ignoreCase": false,
+		"matchMode": "start",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"dbSystem": "PostgreSQL",
+		"_id": "wm-Dadjf5a027tja9SensorData-wm.LiveVariable-1447088529484",
+		"package": "com.presense.dadjf5a027tja9.Sensor",
+		"tableName": "sensor",
+		"tableType": "TABLE",
+		"properties": [
+			"event"
+		],
+		"relatedTables": [
+			{
+				"columnName": "event",
+				"relationName": "event",
+				"type": "Event",
+				"package": "com.presense.dadjf5a027tja9.Sensor",
+				"watchOn": "Dadjf5a027tja9EventData"
+			}
+		],
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "sensorId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "sensor_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "event",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event",
+					"isPrimaryKey": false,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": true,
+					"defaultValue": null,
+					"relatedTableName": "event",
+					"relatedEntityName": "Event",
+					"columns": [
+						{
+							"fieldName": "eventId",
+							"type": "double",
+							"hibernateType": "long",
+							"fullyQualifiedType": "double",
+							"columnName": "event_id",
+							"isPrimaryKey": true,
+							"notNull": true,
+							"length": 255,
+							"precision": 19,
+							"generator": "assigned",
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "name",
+							"type": "string",
+							"hibernateType": "string",
+							"fullyQualifiedType": "string",
+							"columnName": "name",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 255,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "startdate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "startdate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						},
+						{
+							"fieldName": "enddate",
+							"type": "timestamp",
+							"hibernateType": "timestamp",
+							"fullyQualifiedType": "timestamp",
+							"columnName": "enddate",
+							"isPrimaryKey": false,
+							"notNull": false,
+							"length": 29,
+							"precision": 19,
+							"generator": null,
+							"isRelated": false,
+							"defaultValue": null
+						}
+					],
+					"relatedFieldName": "event.eventId",
+					"isList": false
+				}
+			],
+			"primaryKeys": [
+				"sensorId"
+			],
+			"entityName": "Sensor",
+			"fullyQualifiedName": "com.presense.dadjf5a027tja9.Sensor",
+			"tableType": "TABLE"
+		},
+		"name": "Dadjf5a027tja9SensorData"
+	}
+}

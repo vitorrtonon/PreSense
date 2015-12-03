@@ -1,0 +1,536 @@
+<style id="Events.css">
+h1.events-create-title {
+    text-align: center;
+    font-family: "Courier New";
+    font-weight: bold;
+    font-size: 30pt;
+    color: #3295c2;
+    margin-top: 5%;
+}
+h1.events-view-title {
+    text-align: center;
+    font-family: "Courier New";
+    font-weight: bold;
+    font-size: 30pt;
+    color: #3295c2;
+    margin-top: 5%;
+}
+</style>
+<script id="Events.js">
+Application.$controller("EventsPageController", ["$scope", function ($scope) {
+    "use strict";
+
+    /* perform any action with the variables inside this block(on-page-load) */
+    $scope.onPageVariablesReady = function () {
+        /*
+         * variables can be accessed through '$scope.Variables' property here
+         * e.g. $scope.Variables.staticVariable1.getData()
+         */
+    };
+    
+    /* perform any action with widgets inside this block */
+    $scope.onPageReady = function () {
+        /*
+         * widgets can be accessed through '$scope.Widgets' property here
+         * e.g. $scope.Widgets.byId(), $scope.Widgets.byName()or access widgets by $scope.Widgets.widgetName
+         */
+    };
+
+}]);
+
+Application.$controller("event_insert_successController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("event_insert_errorController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("events_view_all_dataController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("events_view_all_detailsController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("events_view_dataController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("events_view_detailsController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("events_view_dataController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+
+Application.$controller("events_view_detailsController", ["$scope",
+	function($scope) {
+		"use strict";
+		$scope.ctrlScope = $scope;
+	}
+]);
+</script>
+<script id="Events.variables.json">
+var _EventsPage_Variables_ ={
+	"PresenseEventData": {
+		"name": "PresenseEventData",
+		"type": "Event",
+		"isList": true,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "event",
+				"fields": [
+					{
+						"name": "eventId",
+						"type": "long"
+					},
+					{
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"name": "startdate",
+						"type": "timestamp"
+					},
+					{
+						"name": "enddate",
+						"type": "timestamp"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "read",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"liveSource": "presense",
+		"ignoreCase": false,
+		"matchMode": "anywhere",
+		"category": "wm.LiveVariable",
+		"isDefault": true,
+		"_id": "wm-PresenseEventData-wm.LiveVariable-1446255044752",
+		"package": "com.presense.presense.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.presense.Event",
+			"tableType": "TABLE"
+		},
+		"bindCount": 4,
+		"filterFields": {}
+	},
+	"insert_event_var": {
+		"name": "insert_event_var",
+		"type": "Event",
+		"isList": false,
+		"owner": "Page",
+		"dataSet": {
+			"dataValue": ""
+		},
+		"dataBinding": [
+			{
+				"name": "dataBinding",
+				"type": "event",
+				"fields": [
+					{
+						"name": "eventId",
+						"type": "long",
+						"value": "bind:Widgets.create_event_id_text.datavalue"
+					},
+					{
+						"name": "name",
+						"type": "string",
+						"value": "bind:Widgets.create_event_name_text.datavalue"
+					},
+					{
+						"name": "startdate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_start_date.datavalue"
+					},
+					{
+						"name": "enddate",
+						"type": "timestamp",
+						"value": "bind:Widgets.create_event_end_date.datavalue"
+					}
+				]
+			}
+		],
+		"saveInPhonegap": false,
+		"firstRow": 0,
+		"maxResults": 20,
+		"designMaxResults": 10,
+		"operation": "insert",
+		"startUpdate": false,
+		"autoUpdate": false,
+		"inFlightBehavior": "executeLast",
+		"transformationRequired": false,
+		"onSuccess": "event_insert_success.show",
+		"onError": "event_insert_error.show",
+		"liveSource": "presense",
+		"ignoreCase": false,
+		"matchMode": "exact",
+		"filterFields": {},
+		"inputFields": {},
+		"category": "wm.LiveVariable",
+		"_id": "wm-insert_event_var-wm.LiveVariable-1446503028604",
+		"package": "com.presense.presense.Event",
+		"tableName": "event",
+		"tableType": "TABLE",
+		"propertiesMap": {
+			"columns": [
+				{
+					"fieldName": "eventId",
+					"type": "double",
+					"hibernateType": "long",
+					"fullyQualifiedType": "double",
+					"columnName": "event_id",
+					"isPrimaryKey": true,
+					"notNull": true,
+					"length": 255,
+					"precision": 19,
+					"generator": "assigned",
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "name",
+					"type": "string",
+					"hibernateType": "string",
+					"fullyQualifiedType": "string",
+					"columnName": "name",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 255,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": null
+				},
+				{
+					"fieldName": "startdate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "startdate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				},
+				{
+					"fieldName": "enddate",
+					"type": "timestamp",
+					"hibernateType": "timestamp",
+					"fullyQualifiedType": "timestamp",
+					"columnName": "enddate",
+					"isPrimaryKey": false,
+					"notNull": false,
+					"length": 29,
+					"precision": 19,
+					"generator": null,
+					"isRelated": false,
+					"defaultValue": ""
+				}
+			],
+			"primaryKeys": [
+				"eventId"
+			],
+			"entityName": "Event",
+			"fullyQualifiedName": "com.presense.presense.Event",
+			"tableType": "TABLE"
+		}
+	},
+	"event_create_clear": {
+		"name": "event_create_clear",
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_create",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-event_create_clear-wm.NavigationVariable-1446503891046"
+	},
+	"notificationVariable1": {
+		"name": "notificationVariable1",
+		"owner": "Page",
+		"operation": "alert",
+		"dataBinding": {
+			"text": "Evento inserido com sucesso!",
+			"okButtonText": "Ok",
+			"alerttype": "success"
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-notificationVariable1-wm.NotificationVariable-1446504244805"
+	},
+	"event_create_back": {
+		"name": "event_create_back",
+		"owner": "Page",
+		"operation": "gotoView",
+		"pageName": "Events",
+		"viewName": "view_events_create",
+		"dataBinding": {
+			"pageName": "",
+			"viewName": ""
+		},
+		"category": "wm.NavigationVariable",
+		"_id": "wm-event_create_back-wm.NavigationVariable-1446505192248"
+	},
+	"event_insert_error": {
+		"name": "event_insert_error",
+		"owner": "Page",
+		"operation": "alert",
+		"dataBinding": {
+			"text": "O evento não pôde ser criado!",
+			"okButtonText": "Ok",
+			"alerttype": "error"
+		},
+		"category": "wm.NotificationVariable",
+		"_id": "wm-event_insert_error-wm.NotificationVariable-1446505930463"
+	}
+}
+</script>
+<script id="Events.html" type="text/ng-template">
+<wm-page name="page1" data-ng-controller="EventsPageController">
+    <wm-header name="header1" content="header"></wm-header>
+    <wm-top-nav name="top_nav1" content="topnav_logged"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-left-panel name="left_panel1" columnwidth="2" content="leftnav_events">
+            <wm-view show="true" viewgroup="events" name="view_events_menu"></wm-view>
+        </wm-left-panel>
+        <wm-page-content name="page_content1" columnwidth="10">
+            <wm-view show="false" viewgroup="events" name="view_events_create">
+                <wm-tile height="100%" width="100%" name="events_create_tile">
+                    <h1 class="events-create-title">Criar Evento</h1>
+                    <wm-layoutgrid margintop="30" name="layoutgrid3">
+                        <wm-gridrow name="gridrow10">
+                            <wm-gridcolumn name="gridcolumn23" columnwidth="2"></wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn24" columnwidth="8">
+                                <wm-composite name="composite9">
+                                    <wm-label fontweight="bold" textalign="left" fontfamily="Courier New" fontsize="25" caption="ID" name="create_event_id_label" class="col-md-3"></wm-label>
+                                    <wm-container name="container9" class="col-md-9">
+                                        <wm-text height="40px" type="number" regexp="^[0-9]+$" required="true" placeholder="" fontfamily="Courier New" fontsize="25" margintop="18" name="create_event_id_text"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn22" columnwidth="2"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow11">
+                            <wm-gridcolumn name="gridcolumn26" columnwidth="2"></wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn27" columnwidth="8">
+                                <wm-composite name="composite10">
+                                    <wm-label caption="Nome" textalign="left" fontweight="bold" fontfamily="Courier New" fontsize="25" name="create_event_name_label" class="col-md-3"></wm-label>
+                                    <wm-container name="container10" class="col-md-9">
+                                        <wm-text required="true" placeholder="" fontfamily="Courier New" fontsize="25" margintop="18" name="create_event_name_text"></wm-text>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn25" columnwidth="2"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow12">
+                            <wm-gridcolumn name="gridcolumn29" columnwidth="2"></wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn30" columnwidth="8">
+                                <wm-composite name="composite7">
+                                    <wm-label caption="Início" fontweight="bold" fontfamily="Courier New" fontsize="25" name="create_event_start_label" class="col-md-3"></wm-label>
+                                    <wm-container margintop="18" name="container7" class="col-md-9">
+                                        <wm-datetime required="true" ismeridian="false" datepattern="dd-MMM-yyyy HH:mm:ss" placeholder="Selecione a data e horário" name="create_event_start_date"></wm-datetime>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn28" columnwidth="2"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow13">
+                            <wm-gridcolumn name="gridcolumn32" columnwidth="2"></wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn33" columnwidth="8">
+                                <wm-composite name="composite8">
+                                    <wm-label fontweight="bold" fontfamily="Courier New" fontsize="25" caption="Término" name="create_event_end_label" class="col-md-3"></wm-label>
+                                    <wm-container margintop="18" name="container8" class="col-md-9">
+                                        <wm-datetime ismeridian="false" required="true" datepattern="dd-MMM-yyyy HH:mm:ss" placeholder="Selecione a data e horário" name="create_event_end_date"></wm-datetime>
+                                    </wm-container>
+                                </wm-composite>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn31" columnwidth="2"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn name="gridcolumn13" columnwidth="2"></wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn14" columnwidth="8">
+                                <wm-button on-click="insert_event_var" color="#ffffff" backgroundcolor="#5b89db" margintop="50" width="100%" iconclass="glyphicon glyphicon-ok fa-lg" fontweight="bold" fontfamily="Courier New" fontsize="25" name="events_create_submit_button"
+                                class="btn-default" caption="Criar" type="submit"></wm-button>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn15" columnwidth="2"></wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-tile>
+            </wm-view>
+            <wm-view show="true" viewgroup="events" name="view_events_view">
+                <wm-tile height="100%" width="100%" name="events_view_tile">
+                    <wm-layoutgrid name="layoutgrid3_1">
+                        <wm-gridrow name="gridrow10_1">
+                            <wm-gridcolumn name="gridcolumn20" columnwidth="3"></wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn21" columnwidth="6">
+                                <h1 class="events-view-title">Visualizar Eventos</h1>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn name="gridcolumn22_1" columnwidth="3"></wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow12_1">
+                            <wm-gridcolumn name="gridcolumn28_1" columnwidth="12">
+                                <wm-livegrid formlayout="inline" service="presense@Event" name="events_view_grid">
+                                    <wm-grid showrowindex="false" searchlabel="Buscar" gridsearch="true" enablesort="true" multiselect="false" radioselect="false" showrecordcount="true" shownavigation="false" nodatamessage="Nenhum evento encontrado" loadingdatamsg="Carregando..."
+                                    showheader="true" height="100%" dataset="bind:Variables.PresenseEventData.dataSet" name="events_view_data" deleterow="false" updaterow="false" insertrow="false" gridfirstrowselect="false" readonlygrid="true">
+                                        <wm-grid-column binding="name" caption="Nome" type="string" readonly="false" col-class="" col-ng-class="" search-placeholder="Insira o nome" is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                        <wm-grid-column binding="startdate" caption="Data de início" type="timestamp" readonly="false" col-class="" col-ng-class="" search-placeholder="dd/MÊS/aaaa" datepattern="dd/MMM/yyyy" formatpattern="toDate"
+                                        is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                        <wm-grid-column binding="enddate" caption="Data de término" type="timestamp" readonly="false" col-class="" col-ng-class="" search-placeholder="dd/MÊS/aaaa" datepattern="dd/MMM/yyyy" formatpattern="toDate"
+                                        is-related-pk="false" pcdisplay="true" mobiledisplay="true"></wm-grid-column>
+                                    </wm-grid>
+                                    <wm-liveform show="true" autocomplete="false" layout="One Column" formtype="inline" dataset="bind:Variables.PresenseEventData.dataSet" name="events_view_details" novalidate="false" title="Detalhes">
+                                        <wm-layoutgrid name="layoutgrid1">
+                                            <wm-gridrow show="show" name="gridrow13">
+                                                <wm-gridcolumn show="show" name="gridcolumn1" columnwidth="12">
+                                                    <wm-form-field display-name="ID" show="true" primary-key="true" generator="assigned" key="eventId" type="double" is-related="false" readonly="true" required="false" placeholder="Enter value" multiple="false"
+                                                    regexp=".*" step="NaN"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow show="show" name="gridrow14">
+                                                <wm-gridcolumn show="show" name="gridcolumn2" columnwidth="12">
+                                                    <wm-form-field display-name="Nome" show="true" primary-key="false" generator="null" key="name" type="string" maxvalue="255" is-related="false" readonly="true" required="false" placeholder="Enter value" multiple="false"
+                                                    regexp=".*"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow show="show" name="gridrow15">
+                                                <wm-gridcolumn show="show" name="gridcolumn3" columnwidth="12">
+                                                    <wm-form-field display-name="Data/Hora de início" show="true" primary-key="false" generator="null" key="startdate" type="timestamp" is-related="false" readonly="true" required="false" placeholder="Select date time"
+                                                    multiple="false" regexp=".*"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                            <wm-gridrow show="show" name="gridrow16">
+                                                <wm-gridcolumn show="show" name="gridcolumn4" columnwidth="12">
+                                                    <wm-form-field display-name="Data/Hora de término" show="true" primary-key="false" generator="null" key="enddate" type="timestamp" is-related="false" readonly="true" required="false" placeholder="Select date time"
+                                                    multiple="false" regexp=".*"></wm-form-field>
+                                                </wm-gridcolumn>
+                                            </wm-gridrow>
+                                        </wm-layoutgrid>
+                                        <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" type="button" update-mode="true"></wm-form-action>
+                                        <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="glyphicon glyphicon-save" type="Submit" update-mode="true"></wm-form-action>
+                                    </wm-liveform>
+                                </wm-livegrid>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-tile>
+            </wm-view>
+            <wm-view show="false" viewgroup="events" name="view_events_remove">
+                <wm-tile height="100%" width="100%" name="events_remove_tile"></wm-tile>
+            </wm-view>
+        </wm-page-content>
+    </wm-content>
+    <wm-footer name="footer1" content="footer"></wm-footer>
+    <wm-view horizontalalign="left" viewgroup="event" show="false" name="event_dialog_insert_success" class="dialog-view">
+        <wm-alertdialog title="Sucesso" on-ok="event_create_back" on-close="event_create_back" iconclass="glyphicon glyphicon-saved fa-lg" alerttype="success" message="Evento criado com sucesso!" name="event_insert_success"></wm-alertdialog>
+    </wm-view>
+    <wm-view show="false" viewgroup="event" name="event_dialog_insert_error" class="dialog-view">
+        <wm-alertdialog iconclass="glyphicon glyphicon-warning-sign fa-lg" message="O evento não pôde ser criado. Tente novamente!" title="Erro" name="event_insert_error"></wm-alertdialog>
+    </wm-view>
+</wm-page>
+</script>

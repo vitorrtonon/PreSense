@@ -4,7 +4,7 @@
 			PreSense Web Service 
 		</description>
     	<schema schemaNamespace="http://presense.services"/>
-    	<parameter name="ServiceClass" locked="false">topcom.presense.server.services.PreSenseWS</parameter>
+    	<parameter name="ServiceClass" locked="false">topcom.presense.server.SensorCommHandler</parameter>
 		<operation name="receiveInfoFromSensor">      
 			<messageReceiver class="org.apache.axis2.rpc.receivers.RPCMessageReceiver" />
 		</operation>

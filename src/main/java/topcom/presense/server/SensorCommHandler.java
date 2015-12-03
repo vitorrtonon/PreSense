@@ -29,7 +29,7 @@ public class SensorCommHandler {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("auth")
-    public Response authComm( @QueryParam("PIN") int pin) {
+    public Response authComm( @QueryParam("pin") int pin) {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 

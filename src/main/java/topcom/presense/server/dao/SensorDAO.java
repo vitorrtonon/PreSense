@@ -10,7 +10,7 @@ public class SensorDAO extends HibernateDAO {
 
 	private static final String SELECT_SENSOR_BY_ID = "from Sensor S where S.id = :id";
 	private static final String SELECT_SENSOR_BY_PIN = "from Sensor S where S.pin = :pin";
-	private static final String SELECT_SENSOR_BY_NAME_AND_PASS = "from Sensor S where S.name = :name and S.pass = :pass";
+	private static final String SELECT_SENSOR_BY_NAME_AND_PASS = "from Sensor S where S.name = :name and S.passcode = :pass";
 	private static final String SELECT_ALL_SENSORS = "from Sensor S";
 
 	public boolean insert(Sensor obj) {
@@ -108,7 +108,7 @@ public class SensorDAO extends HibernateDAO {
 
 			Query query = session.createQuery(SELECT_SENSOR_BY_NAME_AND_PASS);
 			query.setString("name", name);
-			query.setString("pass", pass);
+			query.setString("passcode", pass);
 
 			sensor = (Sensor) query.uniqueResult();
 

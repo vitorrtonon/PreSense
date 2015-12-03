@@ -127,7 +127,7 @@ public class SensorDAO extends HibernateDAO {
 	
 		return sensor;
 	}
-
+	/*
 	public static List<Sensor> findAllSensors() {
 
 		Session session = null;
@@ -157,6 +157,6 @@ public class SensorDAO extends HibernateDAO {
 		}
 	
 		return sensors;
-	}
+	}*/
 
 }

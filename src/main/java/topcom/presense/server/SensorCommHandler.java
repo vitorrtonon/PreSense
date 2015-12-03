@@ -32,14 +32,15 @@ public class SensorCommHandler {
     public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
         SensorDAO dS = new SensorDAO();
-        List<Sensor> se = dS.findAllSensors();
+        Sensor s = dS.findSensorByPin(pin); 
+        /*List<Sensor> se = dS.findAllSensors();
         Sensor s = null;
         for (Sensor it : se) {
             if (it.getPin() == pin) {
                 s = it;
             }
-        }
-        //Sensor s = dS.findSensorByPin(pin); 
+        }*/
+
         if (s == null) 
             return Response.status(403).type("text/plain")
                 .entity("PIN não encontrado").build();  // Invalid access
@@ -74,7 +75,14 @@ public class SensorCommHandler {
         PassCode p = new PassCode();
         Sensor s = dSens.findSensorByNameAndPass(recv.getUser(),
                                      p.encryptPass(recv.getPass()));
-
+        /*List<Sensor> se = dSens.findAllSensors();
+        Sensor s = null;
+        for (Sensor it : se) {
+            if (it.getName().equalsIgnoreCase(recv.getUser()) && it.getPasscode().equals(recv.getPass())) {
+                s = it;
+                break;
+            }
+        }*/
         if (s == null) {
             System.err.println("Unregistered sensor");
             return Response.status(403).type("text/plain")

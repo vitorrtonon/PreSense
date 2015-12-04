@@ -32,12 +32,12 @@ public class SensorCommHandler {
     @Path("auth")
     public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
+        if (true) 
+            return Response.status(403).type("text/plain")
+                .entity(HibernateUtil.getSession().isClosed() + "\n").build();  // Invalid access
 
-        SensorDAO dS = new SensorDAO();		if(true) {
-           return Response.status(403).type("text/plain")
-                .entity("passou \n").build();  // Invalid access
-		}
-        Sensor s = dS.findSensorByPin(1234); 
+        SensorDAO dS = new SensorDAO();
+        Sensor s = dS.findSensorByPin(pin); 
         /*List<Sensor> se = dS.findAllSensors();
         Sensor s = null;
         for (Sensor it : se) {
@@ -46,10 +46,6 @@ public class SensorCommHandler {
             }
         }*/
 
-		if(true) {
-           return Response.status(403).type("text/plain")
-                .entity("passou \n").build();  // Invalid access
-		}
         if (s == null) 
             return Response.status(403).type("text/plain")
                 .entity("PIN not found\n").build();  // Invalid access

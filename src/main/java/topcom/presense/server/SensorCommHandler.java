@@ -34,7 +34,7 @@ public class SensorCommHandler {
         // Identify sensor
 
         SensorDAO dS = new SensorDAO();
-        Sensor s = dS.findSensorByPin(pin); 
+        Sensor s = dS.findSensorByPin(1234); 
         /*List<Sensor> se = dS.findAllSensors();
         Sensor s = null;
         for (Sensor it : se) {
@@ -49,7 +49,7 @@ public class SensorCommHandler {
         
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
-        String passcode = p.generatePass(32, 16);
+        String passcode = p.generatePass(16, 32);
         String encPass = p.encryptPass(passcode);
         
         // Update sql ("consumes" PIN)

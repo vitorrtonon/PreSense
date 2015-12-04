@@ -18,7 +18,7 @@ public class PassCode {
         symbols = sym.toString().toCharArray();
     }
 
-    public String generatePass(int maxSize, int minSize) {
+    public String generatePass(int minSize, int maxSize) {
         Random rand = new Random();
         int len = rand.nextInt(maxSize - minSize) + minSize;
 

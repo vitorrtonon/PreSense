@@ -45,11 +45,7 @@ public class SensorCommHandler {
 
         if (s == null) 
             return Response.status(403).type("text/plain")
-                .entity(pin + " Not Found\n").build();  // Invalid access
-/*
-        if (s == null) 
-            return Response.status(403).type("text/plain")
-                .entity("PIN not found\n").build();  // Invalid access*/
+                .entity("PIN not found\n").build();  
         
         // Create simple random password and encrypt it
         PassCode p = new PassCode();

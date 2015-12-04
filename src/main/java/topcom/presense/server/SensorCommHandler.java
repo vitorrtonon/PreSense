@@ -50,10 +50,10 @@ public class SensorCommHandler {
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
-        String encPass = p.encryptPass(passcode);
+        //String encPass = p.encryptPass(passcode);
         
         // Update sql ("consumes" PIN)
-        s.setPasscode(encPass);
+        s.setPasscode(passcode);
         s.setPin(-1);
         dS.update(s);
         
@@ -74,24 +74,25 @@ public class SensorCommHandler {
         // Retrieve event using sensor's search
         EventDAO dEv = new EventDAO();
         SensorDAO dSens = new SensorDAO();
-        PassCode p = new PassCode();
-        Sensor s = dSens.findSensorByNameAndPass(recv.getUser(),
-                                     recv.getPass());
-                                     //p.encryptPass(recv.getPass()));
-        /*List<Sensor> se = dSens.findAllSensors();
+        //PassCode p = new PassCode();
+        //Sensor s = dSens.findSensorByNameAndPass(recv.getUser(), recv.getPass());
+        List<Sensor> se = dSens.findAllSensors();
+        String saida = "sensores = ";
         Sensor s = null;
         for (Sensor it : se) {
+            saida += it.getName() + " " + it.getPasscode() + " ";
             if (it.getName().equalsIgnoreCase(recv.getUser()) && it.getPasscode().equals(recv.getPass())) {
                 s = it;
                 break;
             }
-        }*/
+        }                           
         if (s == null) {
             System.err.println("Unregistered sensor\n");
             return Response.status(403).type("text/plain")
                 .entity("Sensor " + recv.getUser() + " " + 
-                                      recv.getPass() + "not found\n").build();
+                                      recv.getPass() + "not found\n" + saida).build();
         }
+        
         Event ev = s.getEvent();
         if (ev == null) {
             System.err.println("Unregistered event\n");
@@ -105,12 +106,13 @@ public class SensorCommHandler {
             if (!alertHandling(al, ev))  // Call handler
                 System.err.println("Error in json alert.");
         }    
-        return Response.ok().build();
+        return Response.ok().build();*/
     }
 
     public boolean alertHandling(Alert recv, Event ev) {
         // Compose beacon ID
-        String bId = recv.getMinor() + recv.getMajor() + recv.getUuid();
+        String bId = recv.getMinor() + "-" + 
+                     recv.getMajor() + "-" + recv.getUuid();
         
         // Convert time to miliseconds (later use) and Timestamp 
         String t[] = recv.getTime().split("[-] | [T] | [:] | [Z]");

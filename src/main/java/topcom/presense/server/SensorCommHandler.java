@@ -77,10 +77,8 @@ public class SensorCommHandler {
         //PassCode p = new PassCode();
         //Sensor s = dSens.findSensorByNameAndPass(recv.getUser(), recv.getPass());
         List<Sensor> se = dSens.findAllSensors();
-        String saida = "sensores = ";
         Sensor s = null;
         for (Sensor it : se) {
-            saida += it.getName() + " " + it.getPasscode() + " ";
             if (it.getName().equalsIgnoreCase(recv.getUser()) && it.getPasscode().equals(recv.getPass())) {
                 s = it;
                 break;
@@ -106,51 +104,58 @@ public class SensorCommHandler {
             if (!alertHandling(al, ev))  // Call handler
                 System.err.println("Error in json alert.");
         }    
-        return Response.ok().build();*/
+        return Response.ok().build();
     }
 
     public boolean alertHandling(Alert recv, Event ev) {
         // Compose beacon ID
-        String bId = recv.getMinor() + "-" + 
-                     recv.getMajor() + "-" + recv.getUuid();
+        String bId = recv.getMinor() + "-" + recv.getMajor() + "-" + recv.getUuid();
         
         // Convert time to miliseconds (later use) and Timestamp 
-        String t[] = recv.getTime().split("[-] | [T] | [:] | [Z]");
-        Calendar cal = Calendar.getInstance(); 
-        cal.set(Integer.parseInt(t[0]), Integer.parseInt(t[1]),
-                Integer.parseInt(t[2]), Integer.parseInt(t[3]), 
-                Integer.parseInt(t[4]), Integer.parseInt(t[5]));
-        Long timeMil = cal.getTimeInMillis();
-        Timestamp curTime = new Timestamp(timeMil);
-
+        Timestamp curTime = Timestamp.valueOf(recv.getTime().replace('T', ' ').replace('Z', ' '));
+        Long timeMil = curTime.getTime();
+ 
         // Retrieve person using beacon's search
         BeaconDAO dBeac = new BeaconDAO(); 
-        Person p = dBeac.findBeaconById(bId).getPerson();
+        Beacon b = dBeac.findBeaconById(bId);
+        if (b == null) {
+            System.err.println("Unregistered beacon");
+            return false;
+        }
+        Person p = b.getPerson();
         if (p == null) {
             System.err.println("Unregistered person");
             return false;
         }
-                
+               
         // Search for Attendance, if doesn't exist, creat it
         AttendanceDAO dAtt = new AttendanceDAO();
         Attendance att = dAtt.findAttendanceByEventAndPerson(ev.getId(), 
                                                              p.getId());
-        if (att == null) att = new Attendance(ev, p, new Timestamp(0), curTime);
-        else {
-            // Process rightful kind of signal
-            if (recv.getKind().equals("in")) att.setLastTime(curTime);
-            else if (recv.getKind().equals("update")) {
-                long newTime = att.getTotalTime().getTime() + 
-                            (timeMil - att.getLastTime().getTime());
-                att.setTotalTime(new Timestamp(newTime));
-                att.setLastTime(curTime);
-            }
-            else if (!recv.getKind().equals("out")) {
-                System.err.println("Invalid communication kind");
-                return false;
-            }
-            dAtt.update(att);
+        if (att == null) {
+            att = new Attendance(ev, p, curTime, new Timestamp(0));
+            //Attendancebackup.getInstance().setTotal(new Timestamp(0));
+            //Attendancebackup.getInstance().setLast(curTime);
+            dAtt.insert(att);
+        } 
+        // Process rightful kind of signal
+        if (recv.getKind().equals("in")) {
+            att.setLastTime(curTime);
+            //Attendancebackup.getInstance().setLast(curTime);
         }
+        else if (recv.getKind().equals("update")) {
+            long newTime = att.getTotalTime().getTime() + 
+                        (timeMil - att.getLastTime().getTime());
+            att.setTotalTime(new Timestamp(newTime));
+            att.setLastTime(curTime);
+            //Attendancebackup.getInstance().setTotal(new Timestamp(newTime));
+            //Attendancebackup.getInstance().setLast(curTime);
+        }
+        else if (!recv.getKind().equals("out")) {
+            System.err.println("Invalid communication kind");
+            return false;
+        }
+        dAtt.update(att);
         return true;
     }
 }

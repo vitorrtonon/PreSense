@@ -33,7 +33,10 @@ public class SensorCommHandler {
     public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
 
-        SensorDAO dS = new SensorDAO();
+        SensorDAO dS = new SensorDAO();		if(true) {
+           return Response.status(403).type("text/plain")
+                .entity("passou \n").build();  // Invalid access
+		}
         Sensor s = dS.findSensorByPin(1234); 
         /*List<Sensor> se = dS.findAllSensors();
         Sensor s = null;

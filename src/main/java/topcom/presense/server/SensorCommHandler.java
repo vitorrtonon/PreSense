@@ -34,7 +34,7 @@ public class SensorCommHandler {
         // Identify sensor
         if (true) 
             return Response.status(403).type("text/plain")
-                .entity(HibernateUtil.getSession().isClosed() + "\n").build();  // Invalid access
+                .entity(HibernateUtil.getSessionFactory().isClosed() + "\n").build();  // Invalid access
 
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 

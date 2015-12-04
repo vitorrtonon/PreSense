@@ -34,7 +34,7 @@ public class SensorCommHandler {
         // Identify sensor
 
         SensorDAO dS = new SensorDAO();
-        Sensor s = dS.findSensorByPin(1234); 
+        Sensor s = dS.findSensorByPin(pin); 
         /*List<Sensor> se = dS.findAllSensors();
         Sensor s = null;
         for (Sensor it : se) {

@@ -26,7 +26,7 @@ public class SensorCommHandler {
      *
      * @return String that will be returned as a text/plain response.
      */
-    
+
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("auth")
@@ -34,7 +34,7 @@ public class SensorCommHandler {
         // Identify sensor
 
         SensorDAO dS = new SensorDAO();
-        Sensor s = dS.findSensorByPin(pin); 
+        Sensor s = dS.findSensorByPin(pin);
         /*List<Sensor> se = dS.findAllSensors();
         Sensor s = null;
         for (Sensor it : se) {
@@ -43,22 +43,22 @@ public class SensorCommHandler {
             }
         }*/
 
-        if (s == null) 
+        if (s == null)
             return Response.status(403).type("text/plain")
                 .entity("PIN not found\n").build();  // Invalid access
-        
+
         // Create simple random password and encrypt it
         PassCode p = new PassCode();
         String passcode = p.generatePass(16, 32);
         //String encPass = p.encryptPass(passcode);
-        
+
         // Update sql ("consumes" PIN)
         s.setPasscode(passcode);
         s.setPin(-1);
         dS.update(s);
-        
+
         // Answer to sensor
-        return Response.ok(new Auth(s.getName(), passcode), 
+        return Response.ok(new Auth(s.getName(), passcode),
                                             MediaType.APPLICATION_JSON).build();
     }
 
@@ -67,8 +67,8 @@ public class SensorCommHandler {
      * contain a "application/json" media type
      */
     @POST
-    @Consumes(MediaType.APPLICATION_JSON)    
-    @Produces(MediaType.TEXT_PLAIN)    
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.TEXT_PLAIN)
     @Path("alert")
     public Response signalComm(Signal recv) {
         // Retrieve event using sensor's search
@@ -76,47 +76,47 @@ public class SensorCommHandler {
         SensorDAO dSens = new SensorDAO();
         //PassCode p = new PassCode();
         //Sensor s = dSens.findSensorByNameAndPass(recv.getUser(), recv.getPass());
-        List<Sensor> se = dSens.findAllSensors();
-        Sensor s = null;
-        for (Sensor it : se) {
-            if (it.getName().equalsIgnoreCase(recv.getUser()) && it.getPasscode().equals(recv.getPass())) {
-                s = it;
-                break;
-            }
-        }                           
+        //List<Sensor> se = dSens.findAllSensors();
+        Sensor s = dSens.findSensorById(1);
+        // for (Sensor it : se) {
+        //     if (it.getName().equalsIgnoreCase(recv.getUser()) && it.getPasscode().equals(recv.getPass())) {
+        //         s = it;
+        //         break;
+        //     }
+        // }
         if (s == null) {
             System.err.println("Unregistered sensor\n");
             return Response.status(403).type("text/plain")
-                .entity("Sensor " + recv.getUser() + " " + 
+                .entity("Sensor " + recv.getUser() + " " +
                                       recv.getPass() + "not found\n").build();
         }
-        
+
         Event ev = s.getEvent();
         if (ev == null) {
             System.err.println("Unregistered event\n");
             return Response.status(403).type("text/plain")
                 .entity("No associated event!\n").build();
         }
-        
+
         // Get json subobjects (alert list)
         ArrayList<Alert> evAlerts = new ArrayList<>(recv.getAlerts());
         for (Alert al : evAlerts) { // For each one...
             if (!alertHandling(al, ev))  // Call handler
                 System.err.println("Error in json alert.");
-        }    
+        }
         return Response.ok().build();
     }
 
     public boolean alertHandling(Alert recv, Event ev) {
         // Compose beacon ID
         String bId = recv.getMinor() + "-" + recv.getMajor() + "-" + recv.getUuid();
-        
-        // Convert time to miliseconds (later use) and Timestamp 
+
+        // Convert time to miliseconds (later use) and Timestamp
         Timestamp curTime = Timestamp.valueOf(recv.getTime().replace('T', ' ').replace('Z', ' '));
         Long timeMil = curTime.getTime();
- 
+
         // Retrieve person using beacon's search
-        BeaconDAO dBeac = new BeaconDAO(); 
+        BeaconDAO dBeac = new BeaconDAO();
         Beacon b = dBeac.findBeaconById(bId);
         if (b == null) {
             System.err.println("Unregistered beacon");
@@ -127,24 +127,24 @@ public class SensorCommHandler {
             System.err.println("Unregistered person");
             return false;
         }
-               
+
         // Search for Attendance, if doesn't exist, creat it
         AttendanceDAO dAtt = new AttendanceDAO();
-        Attendance att = dAtt.findAttendanceByEventAndPerson(ev.getId(), 
+        Attendance att = dAtt.findAttendanceByEventAndPerson(ev.getId(),
                                                              p.getId());
         if (att == null) {
             att = new Attendance(ev, p, curTime, new Timestamp(0));
             //Attendancebackup.getInstance().setTotal(new Timestamp(0));
             //Attendancebackup.getInstance().setLast(curTime);
             dAtt.insert(att);
-        } 
+        }
         // Process rightful kind of signal
         if (recv.getKind().equals("in")) {
             att.setLastTime(curTime);
             //Attendancebackup.getInstance().setLast(curTime);
         }
         else if (recv.getKind().equals("update")) {
-            long newTime = att.getTotalTime().getTime() + 
+            long newTime = att.getTotalTime().getTime() +
                         (timeMil - att.getLastTime().getTime());
             att.setTotalTime(new Timestamp(newTime));
             att.setLastTime(curTime);

@@ -58,7 +58,7 @@ public class SensorCommHandler {
        // dS.update(s);
         
         // Answer to sensor
-        return Response.ok(new Auth(s.getName(), passcode), 
+        return Response.ok(new Auth(s.getName(), "teste"/*passcode*/), 
                                             MediaType.APPLICATION_JSON).build();
     }
 

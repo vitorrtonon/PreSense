@@ -32,7 +32,7 @@ public class SensorCommHandler {
     @Path("auth")
     public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
-        if (s == null) 
+        if (true) 
             return Response.status(403).type("text/plain")
                 .entity(HibernateUtil.getSession().isClosed() + "\n").build();  // Invalid access
 

@@ -45,7 +45,7 @@ public class SensorCommHandler {
 
         if (s == null) 
             return Response.status(403).type("text/plain")
-                .entity("Not Found\n").build();  // Invalid access
+                .entity(pin + "Not Found\n").build();  // Invalid access
 /*
         if (s == null) 
             return Response.status(403).type("text/plain")

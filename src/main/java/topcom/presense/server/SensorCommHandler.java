@@ -34,7 +34,7 @@ public class SensorCommHandler {
         // Identify sensor
 
         SensorDAO dS = new SensorDAO();
-        Sensor s = dS.findSensorByPin(pin); 
+        Sensor s = dS.findSensorByPin(1234); 
         /*List<Sensor> se = dS.findAllSensors();
         Sensor s = null;
         for (Sensor it : se) {
@@ -45,7 +45,11 @@ public class SensorCommHandler {
 
         if (s == null) 
             return Response.status(403).type("text/plain")
-                .entity("PIN not found\n").build();  // Invalid access
+                .entity("Not Found\n").build();  // Invalid access
+/*
+        if (s == null) 
+            return Response.status(403).type("text/plain")
+                .entity("PIN not found\n").build();  // Invalid access*/
         
         // Create simple random password and encrypt it
         PassCode p = new PassCode();

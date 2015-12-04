@@ -32,13 +32,9 @@ public class SensorCommHandler {
     @Path("auth")
     public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
-		
-		if(true) {
-
+        if (s == null) 
             return Response.status(403).type("text/plain")
-                .entity(HibernateUtil.getSessionFactory().isClosed()+"\n").build();  // Invalid access
-			
-		}
+                .entity(HibernateUtil.getSession().isClosed() + "\n").build();  // Invalid access
 
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 

@@ -88,7 +88,7 @@ public class SensorCommHandler {
             System.err.println("Unregistered sensor\n");
             return Response.status(403).type("text/plain")
                 .entity("Sensor " + recv.getUser() + " " + 
-                                      recv.getPass() + "not found\n" + saida).build();
+                                      recv.getPass() + "not found\n").build();
         }
         
         Event ev = s.getEvent();

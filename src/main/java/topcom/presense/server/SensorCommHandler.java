@@ -2,6 +2,7 @@ package topcom.presense.server;
 
 import topcom.presense.server.pojo.*;
 import topcom.presense.server.dao.*;
+import topcom.presense.server.util.*;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
@@ -31,6 +32,14 @@ public class SensorCommHandler {
     @Path("auth")
     public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
+		
+		if(true) {
+
+            return Response.status(403).type("text/plain")
+                .entity(HibernateUtil.getSessionFactory().isClosed()+"\n").build();  // Invalid access
+			
+		}
+
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
         /*List<Sensor> se = dS.findAllSensors();

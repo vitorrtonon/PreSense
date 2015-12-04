@@ -1,5 +1,6 @@
-<%@page import="topcom.presense.server.util.*, topcom.presense.server.dao.*, topcom.presense.server.pojo.*, org.hibernate.*, org.hibernate.cfg.*, java.util.*, java.sql.*"%>
+<%@page import="topcom.presense.server.util.*"%>
 <%
+	HibernateUtil.getSessionFactory().openSession();
 	/*
 	EventDAO ed = new EventDAO();
 	PersonDAO pd = new PersonDAO();
@@ -28,5 +29,6 @@
 	md.insert(manager);
 	ed.insert(event);
 	sd.insert(sensor);
+*/
 %>
 Hello!

@@ -7,7 +7,7 @@
 
     <class name="Manager" table="Manager">
 
-		<id name="username" column="manager_id" type="string" />
+		<id name="username" column="username" type="string" />
 
 		<property name="name" column="name" type="string" />
 
@@ -18,7 +18,7 @@
 		</property>
 
 		<set name="events" table="EventManager" inverse="true" lazy="false">
-			<key column="manager_id" not-null="true"/>
+			<key column="username" not-null="true"/>
 			<many-to-many column="event_id" class="Event"/>
 		</set>
     </class>

@@ -32,9 +32,6 @@ public class SensorCommHandler {
     @Path("auth")
     public Response authComm( @QueryParam("PIN") int pin) {
         // Identify sensor
-        if (true) 
-            return Response.status(403).type("text/plain")
-                .entity(pin + "\n").build();  // Invalid access
 
         SensorDAO dS = new SensorDAO();
         Sensor s = dS.findSensorByPin(pin); 
@@ -51,14 +48,14 @@ public class SensorCommHandler {
                 .entity("PIN not found\n").build();  // Invalid access
         
         // Create simple random password and encrypt it
-        PassCode p = new PassCode();
-        String passcode = p.generatePass(16, 32);
-        String encPass = p.encryptPass(passcode);
+      //  PassCode p = new PassCode();
+       // String passcode = p.generatePass(16, 32);
+       // String encPass = p.encryptPass(passcode);
         
         // Update sql ("consumes" PIN)
-        s.setPasscode(encPass);
-        s.setPin(-1);
-        dS.update(s);
+       // s.setPasscode(encPass);
+       // s.setPin(-1);
+       // dS.update(s);
         
         // Answer to sensor
         return Response.ok(new Auth(s.getName(), passcode), 
